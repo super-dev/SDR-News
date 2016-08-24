@@ -3,7 +3,7 @@
         <h2>{{ name | uppercase }}</h2>
 
         <ul class="item-list">
-            <li v-for="obj in posts">
+            <li v-for="obj in posts | orderBy 'data.created_utc' -1">
                 <post :item="obj"></post>
             </li>
         </ul>
@@ -39,8 +39,7 @@ export default {
 
 <style scoped>
 .subreddit{
-	flex: 0 0 50%;
-	min-width: 400px;
+	width: 100%;
 	padding: 20px 42px;
 }
 
@@ -56,6 +55,6 @@ export default {
 }
 
 .subreddit .item-list li{
-	margin-bottom: 17px;
+	margin-bottom: 32px;
 }
 </style>

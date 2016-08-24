@@ -1,10 +1,11 @@
 /*-----------------
    Custom filters 
 -----------------*/
+var moment = require('moment');
 
 // Filter for cutting off strings that are too long.
 export function truncate(value) {
-	var length = 144;
+	var length = 124;
 
 	if(value.length <= length) {
 		return value;
@@ -21,6 +22,12 @@ export function setAsBackground(value) {
 		return 'background-image: url(' + value + ')';	
 	}
 	else {
-		return 'background-image: url(http://placehold.it/60x60)';	
+		return 'background: #eee';	
 	}
+}
+
+
+// Filter that takes an epoch based UTC date and creates date time value.
+export function epochToDate(value) {
+	return new moment.utc(value * 1000).fromNow();
 }

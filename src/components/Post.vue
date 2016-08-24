@@ -4,23 +4,15 @@
         <a :href="item.data.url" :style="item.data.thumbnail | setAsBackground" target="_blank" class="thumbnail"></a>
 
         <div class="details">
-
             <a :href="item.data.url" :title="item.data.title" target="_blank" class="title">
                 {{ item.data.title | truncate }}
-            </a>			
+                
+                <span class="title-domain">({{item.data.domain}})</span>
+            </a>	
             
-            <div class="action-buttons">
-                <a href="http://reddit.com{{ item.data.permalink }}" title="Vote">
-                    <i class="material-icons">thumbs_up_down</i>
-                    {{item.data.score}}
-                </a>
-
-                <a href="http://reddit.com{{ item.data.permalink }}" title="Go to discussion">
-                    <i class="material-icons">forum</i>
-                    {{item.data.num_comments}}
-                </a>
+            <div class="meta">
+                via <a href="https://reddit.com/{{ item.data.permalink }}" title="View this on Reddit">reddit</a> • {{ item.data.created_utc | epochToDate }}
             </div>
-
         </div>
     </div>
     
@@ -47,9 +39,8 @@ export default {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	margin-right: 10px;
 	border-radius: 4px;
-	margin-right: 12px;
+	margin-right: 16px;
 }
 
 .post .details{
@@ -58,25 +49,41 @@ export default {
 }
 
 .post .details .title{
-	font-size: 18px;
+	font-size: 22px;
+    line-height: 1.4;
+    margin-top: -4px; 
 	margin-bottom: 3px;
     font-weight: bold;
-	color: #04477b;
+	color: #444;
 }
 
 .post .details .title:visited{
-	color: purple;
+	color: #999;
 }
 
-.post .details .action-buttons a{
-	font-size: 11px;
+
+.post .details .title-domain {
+    font-size: 12.8px;
+    font-weight: normal;
+    color: #777;
+}
+
+.post .details .meta{
+	font-size: 12.5px;
 	margin-right: 4px;
 	display: inline-block;
-	color: #666;
+	color: #aaa;
 }
 
-.post .details .action-buttons i{
-	font-size: 10px;
-	margin-right: 1px;
+.post .details .meta a {
+    color: #999;
+    font-weight: normal;
+    border-bottom: 1px dotted #eee;
+}
+
+.post .details .meta a:hover {
+    color: #777;
+    text-decoration: none;
+    border-bottom: 1px dotted #eee;
 }
 </style>

@@ -60,9 +60,9 @@ a:hover{
 }
 
 html{
-	font: normal 16px/24px sans-serif;
+	font: normal 16px/24px "Segoe UI", sans-serif;
 	color: #333;
-	background-color: #f9f9f9;
+	background-color: #fff;
 }
 body {
   padding: 30px;
@@ -73,22 +73,16 @@ header {
 }
 
 .container{
-	max-width: 1250px;
+	max-width: 960px;
   margin: 0 auto;
 }
 
 .grid-container {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;  
 	padding: 27px 20px;
 	margin: 30px auto 50px;
 	background-color: #fff;
-	box-shadow: 0 0 1px #ccc;
 }
 
 .logo {
-  width: 100px;
-  height: 100px
 }
 </style>
