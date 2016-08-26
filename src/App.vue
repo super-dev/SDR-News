@@ -2,7 +2,14 @@
   <header class="site-header">
     <div class="container-full">
       <img class="site-logo header-left" src="./assets/logo.png">
-      <h1 class="site-title"> News</h1>
+      <nav role="navigation" class="main-navigation">
+        <ul class="menu">
+          <li class="menu-item"><a href="https://superdevresources.com/">Articles</a></li>
+          <li class="menu-item current-menu-item"><a href="/">News</a></li>
+          <li class="menu-item"><a href="https://superdevresources.com/tools/">Tools </a></li>
+          <li class="menu-item"><a href="https://superdevresources.com/directory/">Directory</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
   <div class="site-sub-header section-medium">
@@ -11,6 +18,7 @@
   <div class="container-readable">
     <Subreddit name="web_design"></Subreddit>
     <Subreddit name="webdev"></Subreddit>
+    <Subreddit name="php"></Subreddit>
     <Subreddit name="frontend"></Subreddit>
     <Subreddit name="css"></Subreddit>
     <Subreddit name="programmerhumor"></Subreddit>
