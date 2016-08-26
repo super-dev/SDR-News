@@ -51,13 +51,31 @@ export default {
 
   created() {
     var subreddits = [
-            'web_design',
-            'webdev',
-            'frontend',
+            'angular2',
+            'browsers',
+            'coding',
             'css',
+            'devlist',
+            'frontend',
+            'html5',
             'javascript',
+            'jquery',
+            'node',
+            'opensource',
             'php',
-            'programmerhumor'
+            'ProgrammerHumor'
+            'ProWordPress',
+            'python',
+            'reactjs',
+            'Sass',
+            'vuejs',
+            'web_design',
+            'Web_Development',
+            'web_programming',
+            'webdev',
+            'webgl',
+            'websecurity',
+            'Wordpress'
           ];
 
     for (var index = 0; index < subreddits.length; ++index) {
