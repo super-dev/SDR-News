@@ -12,17 +12,15 @@
       </nav>
     </div>
   </header>
-  <div class="site-sub-header section-medium">
-    <h1 class="h2">News for Web Developers</h1>
+  <div class="site-sub-header section">
+    <h1 class="h3">News for Web Developers</h1>
   </div>
   <div class="container-readable">
-    <Subreddit name="web_design"></Subreddit>
-    <Subreddit name="webdev"></Subreddit>
-    <Subreddit name="php"></Subreddit>
-    <Subreddit name="frontend"></Subreddit>
-    <Subreddit name="css"></Subreddit>
-    <Subreddit name="programmerhumor"></Subreddit>
-    <Subreddit name="javascript"></Subreddit>
+    <ul class="news-list">
+        <li v-for="obj in posts | orderBy 'data.created_utc' -1">
+            <post :item="obj"></post>
+        </li>
+    </ul>
   </div>
   <footer class="site-footer section text-center">
     <div class="container-content">
@@ -33,14 +31,55 @@
 </template>
 
 <script>
-import Subreddit from './components/Subreddit'
+
+import Post from './components/Post'
 
 
 export default {
   components: {
-    Subreddit
+    Post
+  },
+
+  props: ['name'],
+
+
+  data () {
+      return { 
+          posts: []
+      }
+  },
+
+  created() {
+    var subreddits = [
+            'web_design',
+            'webdev',
+            'frontend',
+            'css',
+            'javascript',
+            'php',
+            'programmerhumor'
+          ];
+
+    for (var index = 0; index < subreddits.length; ++index) {
+      this.$http.get("https://www.reddit.com/r/"+ subreddits[index] +"/top.json?limit=5")
+      .then(function(resp){
+          this.posts = this.posts.concat(resp.data.data.children);
+      });
+    }
   }
 }
 </script>
 
 <style src="./styles/mm.css"></style>
+
+<style scoped>    
+    .news-list {
+        margin-top: 20px;
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    .news-list li {
+        margin-bottom: 32px;
+    }
+</style>

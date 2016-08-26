@@ -12,7 +12,7 @@
             </a>	
             
             <div class="entry-meta">
-                via <a href="https://reddit.com/{{ item.data.permalink }}" title="View this on Reddit">reddit</a> • {{ item.data.created_utc | epochToDate }}
+                via <a href="https://reddit.com/{{ item.data.permalink }}" title="View this on Reddit">reddit</a> • {{ item.data.subreddit }} • {{ item.data.created_utc | epochToDate }}
             </div>
         </div>
     </div>
