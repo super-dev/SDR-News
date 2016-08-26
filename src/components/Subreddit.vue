@@ -38,23 +38,23 @@ export default {
 </script>
 
 <style scoped>
-.subreddit{
-	width: 100%;
-	padding: 20px 42px;
-}
-
-.subreddit h2{
-	font-size: 18px;
-	margin-bottom: 10px;
-}
-
-.subreddit .item-list{
-	border-top: 1px solid #bec9d0;
-	padding-top: 20px;
-	list-style: none;
-}
-
-.subreddit .item-list li{
-	margin-bottom: 32px;
-}
+    .subreddit {
+        width: 100%;
+        padding: 20px 42px;
+    }
+    
+    .subreddit h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .subreddit .item-list {
+        border-top: 1px solid #bec9d0;
+        padding-top: 20px;
+        list-style: none;
+    }
+    
+    .subreddit .item-list li {
+        margin-bottom: 32px;
+    }
 </style>
