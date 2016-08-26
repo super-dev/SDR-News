@@ -39,8 +39,7 @@ export default {
 
 <style scoped>
     .subreddit {
-        width: 100%;
-        padding: 20px 42px;
+        margin-top: 60px;
     }
     
     .subreddit h2 {
@@ -49,9 +48,10 @@ export default {
     }
     
     .subreddit .item-list {
-        border-top: 1px solid #bec9d0;
+        border-top: 1px solid #eee;
         padding-top: 20px;
         list-style: none;
+        padding-left: 0;
     }
     
     .subreddit .item-list li {
