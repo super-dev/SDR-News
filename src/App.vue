@@ -2,9 +2,12 @@
   <header class="site-header">
     <div class="container-full">
       <img class="site-logo header-left" src="./assets/logo.png">
-      <h1 class="site-title">Web Development News</h1>
+      <h1 class="site-title"> News</h1>
     </div>
   </header>
+  <div class="site-sub-header section-medium">
+    <h1 class="h2">News for Web Developers</h1>
+  </div>
   <div class="container-readable">
     <Subreddit name="web_design"></Subreddit>
     <Subreddit name="webdev"></Subreddit>
