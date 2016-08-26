@@ -12,7 +12,7 @@
             </a>	
             
             <div class="entry-meta">
-                via <a href="https://www.reddit.com/{{ item.data.permalink }}" title="View this on Reddit" target="_blank">reddit</a> • posted in <a href="https://www.reddit.com/r/{{ item.data.subreddit }}" title="View subreddit" target="_blank">{{ item.data.subreddit }}</a> • {{ item.data.created_utc | epochToDate }}
+               <a href="https://www.reddit.com/r/{{ item.data.subreddit }}" title="View subreddit" target="_blank">{{ item.data.subreddit }}</a> • <a href="https://www.reddit.com/{{ item.data.permalink }}" title="View comments on Reddit" target="_blank">{{ item.data.num_comments }} comments</a> •  {{ item.data.created_utc | epochToDate }} via reddit
             </div>
         </div>
     </div>
