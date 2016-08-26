@@ -63,7 +63,7 @@ export default {
             'node',
             'opensource',
             'php',
-            'ProgrammerHumor'
+            'ProgrammerHumor',
             'ProWordPress',
             'python',
             'reactjs',
@@ -78,10 +78,23 @@ export default {
             'Wordpress'
           ];
 
-    for (var index = 0; index < subreddits.length; ++index) {
-      this.$http.get("https://www.reddit.com/r/"+ subreddits[index] +"/top.json?limit=5")
+    for (var index = 0; index < subreddits.length; index++) {
+      this.$http.get("https://www.reddit.com/r/"+ subreddits[index] +"/hot.json?limit=7")
       .then(function(resp){
-          this.posts = this.posts.concat(resp.data.data.children);
+          for (var i = 0; i < resp.data.data.children.length; i++) {
+            var item = resp.data.data.children[i];
+            var add = true;
+            if(item.data.is_self) {
+              if(item.data.score < 15) {
+                add = false;
+              }
+            }
+            else if(item.data.score < 6 || item.data.ups < 3) {
+                add = false;
+            }
+
+            if(add) this.posts.push(item);
+          }
       });
     }
   }
@@ -98,6 +111,6 @@ export default {
     }
     
     .news-list li {
-        margin-bottom: 32px;
+        margin-bottom: 40px;
     }
 </style>

@@ -49,7 +49,7 @@ export default {
 }
 
 .entry-title h2 {
-	font-size: 22px;
+	font-size: 24px;
     margin-top: -4px; 
 	margin-bottom: 3px;
 }
@@ -62,5 +62,9 @@ export default {
     font-size: 12.8px;
     font-weight: normal;
     color: #777;
+}
+
+.entry-meta {
+    font-weight: 300;
 }
 </style>
