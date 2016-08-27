@@ -12,7 +12,7 @@
             </a>	
             
             <div class="entry-meta">
-               <a href="https://www.reddit.com/r/{{ item.data.subreddit }}" title="View subreddit" target="_blank">{{ item.data.subreddit }}</a> • <a href="https://www.reddit.com/{{ item.data.permalink }}" title="View comments on Reddit" target="_blank">{{ item.data.num_comments }} comments</a> •  {{ item.data.created_utc | epochToDate }} via reddit
+               <a class="category" href="https://www.reddit.com/r/{{ item.data.subreddit }}" title="View subreddit" target="_blank">{{ item.data.subreddit | uppercase }}</a> • <a href="https://www.reddit.com/{{ item.data.permalink }}" title="View comments on Reddit" target="_blank">{{ item.data.num_comments }} comments</a> •  {{ item.data.created_utc | epochToDate }} via reddit
             </div>
         </div>
     </div>
@@ -51,11 +51,12 @@ export default {
 .entry-title h2 {
 	font-size: 24px;
     margin-top: -4px; 
-	margin-bottom: 3px;
+	margin-bottom: 5px;
 }
 
-.entry-title:visited h2 {
-	color: #999;
+.entry-title:visited h2,
+.entry-title:visited .entry-meta {
+	color: #aaa;
 }
 
 .entry-title .title-domain {
@@ -66,5 +67,15 @@ export default {
 
 .entry-meta {
     font-weight: 300;
+    font-size: 90%;
+}
+
+.entry-meta .category {    
+    font-size: 90%;
+    letter-spacing: 0.04em;
+}
+
+.entry-meta a:hover {
+    border-bottom: 1px dotted;
 }
 </style>

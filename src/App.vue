@@ -79,13 +79,21 @@ export default {
           ];
 
     for (var index = 0; index < subreddits.length; index++) {
-      this.$http.get("https://www.reddit.com/r/"+ subreddits[index] +"/hot.json?limit=7")
+      this.$http.get("https://www.reddit.com/r/"+ subreddits[index] +"/new.json?limit=20")
       .then(function(resp){
           for (var i = 0; i < resp.data.data.children.length; i++) {
             var item = resp.data.data.children[i];
             var add = true;
+            //filter posts older than a week
+            var days_old = Math.round((new Date() - (new Date(item.data.created_utc * 1000)))/(1000*60*60*24));
+            
+            if(days_old > 7) {
+              add = false;
+            }
+
+            //filter posts that have not yet achieved a threshold score determined by magic
             if(item.data.is_self) {
-              if(item.data.score < 15) {
+              if(item.data.score < 15) { // tighter score requirements from self posts
                 add = false;
               }
             }
