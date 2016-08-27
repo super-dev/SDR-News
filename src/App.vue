@@ -78,12 +78,20 @@ export default {
             'Wordpress'
           ];
 
+          var url_dict = [];
+
     for (var index = 0; index < subreddits.length; index++) {
       this.$http.get("https://www.reddit.com/r/"+ subreddits[index] +"/new.json?limit=20")
       .then(function(resp){
           for (var i = 0; i < resp.data.data.children.length; i++) {
             var item = resp.data.data.children[i];
             var add = true;
+
+            //remove duplicate urls
+            if(url_dict[item.data.url] == 1) {
+              add = false;
+            }
+
             //filter posts older than a week
             var days_old = Math.round((new Date() - (new Date(item.data.created_utc * 1000)))/(1000*60*60*24));
 
@@ -101,7 +109,11 @@ export default {
                 add = false;
             }
 
-            if(add) this.posts.push(item);
+            if(add) {
+              this.posts.push(item);
+              //remember that we added this url
+              url_dict[item.data.url] = 1;
+            }
           }
       });
     }

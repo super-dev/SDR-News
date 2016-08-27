@@ -1,8 +1,8 @@
 <template>
 
     <div class="article">
+        <a :href="item.data.url" :style="item.data.thumbnail | setAsBackground" :title="item.data.title" target="_blank" class="article-thumbnail"></a>
         <a :href="item.data.url" :title="item.data.title" target="_blank" class="entry-title">
-            <span :href="item.data.url" :style="item.data.thumbnail | setAsBackground" target="_blank" class="article-thumbnail"></span>
             <h2>
                 {{ item.data.title | truncate }}                
                 <span class="title-domain">({{item.data.domain}})</span>
@@ -32,6 +32,9 @@ export default {
 
 .article-thumbnail {
     position: absolute;
+    background-color: #000;
+    background-blend-mode: screen;
+    padding: 6px;
     opacity: 0.8;
     left: 0;
     top: 4px;
@@ -42,6 +45,10 @@ export default {
 	background-size: cover;
 	background-position: center;
 	border-radius: 4px;
+}
+
+.article-thumbnail:visited  {
+    background-color: #999;
 }
 
 .article-thumbnail:hover {
