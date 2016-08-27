@@ -21,9 +21,6 @@ export function setAsBackground(value) {
 	if(value && value!='self' && value !='nsfw' && value != 'default' ) {
 		return 'background-image: url(' + value + ')';	
 	}
-	else {
-		return 'background: #eee';	
-	}
 }
 
 

@@ -1,19 +1,16 @@
 <template>
 
     <div class="article">
-        <a :href="item.data.url" :style="item.data.thumbnail | setAsBackground" target="_blank" class="article-thumbnail"></a>
-
-        <div class="details">
-            <a :href="item.data.url" :title="item.data.title" target="_blank" class="entry-title">
-                <h2>
-                    {{ item.data.title | truncate }}                
-                    <span class="title-domain">({{item.data.domain}})</span>
-                </h2>
-            </a>	
+        <a :href="item.data.url" :title="item.data.title" target="_blank" class="entry-title">
+            <span :href="item.data.url" :style="item.data.thumbnail | setAsBackground" target="_blank" class="article-thumbnail"></span>
+            <h2>
+                {{ item.data.title | truncate }}                
+                <span class="title-domain">({{item.data.domain}})</span>
+            </h2>
+        </a>	
             
-            <div class="entry-meta">
-               <a class="category" href="https://www.reddit.com/r/{{ item.data.subreddit }}" title="View subreddit" target="_blank">{{ item.data.subreddit | uppercase }}</a> • <a href="https://www.reddit.com/{{ item.data.permalink }}" title="View comments on Reddit" target="_blank">{{ item.data.num_comments }} comments</a> •  {{ item.data.created_utc | epochToDate }} via reddit
-            </div>
+        <div class="entry-meta">
+            <a class="category" href="https://www.reddit.com/r/{{ item.data.subreddit }}" title="View subreddit" target="_blank">{{ item.data.subreddit | uppercase }}</a> • <a href="https://www.reddit.com/{{ item.data.permalink }}" title="View comments on Reddit" target="_blank">{{ item.data.num_comments }} comments</a> •  {{ item.data.created_utc | epochToDate }} via reddit
         </div>
     </div>
     
@@ -28,20 +25,23 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .article {
-    display: flex;
+    position: relative;
 }
 
 .article-thumbnail {
-	display: block;
-	flex: 0 0 60px;
+    position: absolute;
+    opacity: 0.8;
+    left: 0;
+    top: 4px;
 	height: 60px;
+    width: 60px;
+    background-image: url('/static/img/default-icon.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	border-radius: 4px;
-	margin-right: 16px;
 }
 
 .article-thumbnail:hover {
@@ -50,8 +50,8 @@ export default {
 
 .entry-title h2 {
 	font-size: 24px;
-    margin-top: -4px; 
 	margin-bottom: 5px;
+	margin-left: 76px;
 }
 
 .entry-title:visited h2,
@@ -68,6 +68,7 @@ export default {
 .entry-meta {
     font-weight: 300;
     font-size: 90%;
+	margin-left: 76px;
 }
 
 .entry-meta .category {    

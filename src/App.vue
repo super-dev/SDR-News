@@ -86,14 +86,14 @@ export default {
             var add = true;
             //filter posts older than a week
             var days_old = Math.round((new Date() - (new Date(item.data.created_utc * 1000)))/(1000*60*60*24));
-            
+
             if(days_old > 7) {
               add = false;
             }
 
             //filter posts that have not yet achieved a threshold score determined by magic
             if(item.data.is_self) {
-              if(item.data.score < 15) { // tighter score requirements from self posts
+              if(item.data.score < 10) { // tighter score requirements from self posts
                 add = false;
               }
             }
