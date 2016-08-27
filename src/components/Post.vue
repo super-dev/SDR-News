@@ -1,8 +1,8 @@
 <template>
 
     <div class="article">
-        <a :href="item.data.url" :style="item.data.thumbnail | setAsBackground" :title="item.data.title" target="_blank" class="article-thumbnail"></a>
-        <a :href="item.data.url" :title="item.data.title" target="_blank" class="entry-title">
+        <a :href="item.data.url | unescape" :style="item.data.thumbnail | setAsBackground" :title="item.data.title" target="_blank" class="article-thumbnail"></a>
+        <a :href="item.data.url | unescape" :title="item.data.title" target="_blank" class="entry-title">
             <h2>
                 {{ item.data.title | truncate }}                
                 <span class="title-domain">({{item.data.domain}})</span>
@@ -74,12 +74,14 @@ export default {
 
 .entry-meta {
     font-weight: 300;
-    font-size: 90%;
+    font-size: 95%;
 	margin-left: 76px;
 }
 
 .entry-meta .category {    
     font-size: 90%;
+    font-weight: normal;
+    color: #fb0;
     letter-spacing: 0.04em;
 }
 

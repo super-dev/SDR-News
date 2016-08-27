@@ -23,8 +23,14 @@ export function setAsBackground(value) {
 	}
 }
 
-
 // Filter that takes an epoch based UTC date and creates date time value.
 export function epochToDate(value) {
 	return new moment.utc(value * 1000).fromNow();
+}
+
+// Filter that unescape URL
+export function unescape(value) {
+	var textArea = document.createElement('textarea');
+	textArea.innerHTML = value;
+	return textArea.value;
 }
