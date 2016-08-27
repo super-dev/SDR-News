@@ -57,7 +57,7 @@ export default {
 
 .entry-title h2 {
 	font-size: 24px;
-	margin-bottom: 5px;
+	margin-bottom: 8px;
 	margin-left: 76px;
 }
 
