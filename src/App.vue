@@ -1,8 +1,10 @@
 <template>
-  <header class="site-header">
-    <div class="container-full">
-      <img class="site-logo header-left" src="./assets/logo.png">
-      <nav role="navigation" class="main-navigation">
+  <header class="header-light">
+    <div class="container">
+      <div class="site-branding header-left">
+        <img class="site-logo" src="./assets/logo.png">
+      </div>
+      <nav role="navigation">
         <ul class="menu">
           <li class="menu-item"><a href="https://superdevresources.com/">Articles</a></li>
           <li class="menu-item current-menu-item"><a href="/">News</a></li>
@@ -12,7 +14,7 @@
       </nav>
     </div>
   </header>
-  <div class="site-sub-header section">
+  <div class="sub-header-light text-center section-medium">
     <h1 class="h3">News for Web Developers</h1>
   </div>
   <div class="container-readable">
@@ -22,7 +24,7 @@
         </li>
     </ul>
   </div>
-  <footer class="site-footer section text-center">
+  <footer class="footer-light section text-center">
     <div class="container-content">
         To get a better understanding of how this boilerplate works, check out
         <a href="http://vuejs-templates.github.io/webpack" target="_blank">its documentation</a>.
@@ -121,7 +123,7 @@ export default {
 }
 </script>
 
-<style src="./styles/mm.css"></style>
+<style src="./../node_modules/mmcss/dist/mm.css"></style>
 
 <style scoped>    
     .news-list {
