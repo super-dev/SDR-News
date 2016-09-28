@@ -2,14 +2,14 @@
 
 > Web Develepment News (news.superdevresources.com)
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
+## Credits
 
-# serve with hot reload at localhost:8080
-npm run dev
+ - [vue.js](http://vuejs.org/) - Used for building the Web interface
+ - [MMCSS](https://mmcss.kunruchcreations.com/) - CSS Framework used for design
+ - [mmpilot](https://mmpilot.kunruchcreations.com/) - Build tool
+ - [Font Awesome](http://fontawesome.io/) and [IcoMoon](https://icomoon.io/) for SVG icons used on site.
 
-# build for production with minification
-npm run build
+## License
+
+Licensed under the MIT License

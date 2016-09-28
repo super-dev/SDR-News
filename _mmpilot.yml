@@ -1,0 +1,15 @@
+scripts:
+  browserify:
+    entries: ["main.js"]
+
+## additional data for site available as site.{key} in pug templates
+site:
+  url: "https://news.superdevresources.com/"
+  twitter: "https://twitter.com/superdevres42"
+  analytics: "UA-37350394-3"
+
+## overrides when built with -d or --development option
+development:
+  site:
+    url: "http://localhost:3000/"
+    analytics: "" #don't count hits from localhost in analytics
