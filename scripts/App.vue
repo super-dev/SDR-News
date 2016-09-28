@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="sub-header text-center section">
-      <h1 class="h3">News for Web Developers</h1>
+    <div class="sub-header text-center section-medium">
+      <h1 class="h2 section-title">News for Web Developers</h1>
     </div>
     <div class="container-readable">
       <ul class="news-list">
@@ -106,15 +106,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-    .news-list {
-        margin-top: 20px;
-        list-style: none;
-        padding-left: 0;
-    }
-
-    .news-list li {
-        margin-bottom: 40px;
-    }
-</style>
