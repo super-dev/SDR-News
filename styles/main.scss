@@ -1,0 +1,15 @@
+@import "vars";
+@import "mmcss/src/mm";
+
+.header {
+  .menu {
+    font-size: 88%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .button-ghost {
+    padding: 0 1em;
+    margin-left: 0.5em;
+  }
+}

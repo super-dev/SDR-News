@@ -1,0 +1,16 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.icon-twitter {
+  width: 0.9285703301429749em;
+}
+
+.icon-github {
+  width: 0.8571436107158661em;
+}

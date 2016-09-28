@@ -1,0 +1,52 @@
+doctype html
+block vars
+html(lang='en-US')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title #{title} - SDR News
+    meta(name='description', content=description)
+    meta(property='og:title', content=title)
+    meta(property='og:type', content='website')
+    meta(property='og:url', content=page.url)
+    meta(property='og:image', content=site.url + 'img/featured.png')
+    link(rel='canonical', href=page.url)
+    link(href='/styles/main.css', rel='stylesheet')
+    style
+      include ./../_includes/_icons.css
+    block styles
+    link(rel='icon', href=site.url + 'img/sdr-logo-32x32.png', sizes='32x32')
+    link(rel='icon', href=site.url + 'img/sdr-logo-192x192.png', sizes='192x192')
+    link(rel='apple-touch-icon-precomposed', href=site.url + 'img/sdr-logo-180x180.png')
+    meta(name='msapplication-TileImage', content=site.url + 'img/sdr-logo-270x270.png')
+  body#top
+    include ./../_includes/_icons.svg
+    header.header
+        .container
+            .header-left
+              a(href='https://superdevresources.com/').site-branding
+                img(src="/img/logo.png")
+                h1.title.screen-reader-text SDR News
+            nav(rol="navigation")
+              ul.menu
+                li.menu-item
+                  a(href="https://superdevresources.com/") Articles
+                li.menu-item.current-menu-item
+                  a(href="/") News
+                li.menu-item
+                  a(href="https://superdevresources.com/tools/") Tools
+                li.menu-item
+                  a(href="https://superdevresources.com/directory/") Directory
+            div.header-right.hidden-mobile
+              a.button.button-ghost(href=site.twitter target="_blank")
+                | <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+              a.button.button-ghost(href=site.github, target="_blank")
+                | <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
+
+    block content
+    footer.footer
+      .container-content.section-large.text-center
+        p Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a> by <a href="http://kunruchcreations.com/">KunRuch Creations</a>.
+  block scripts
+  include ./../_includes/_analytics.pug

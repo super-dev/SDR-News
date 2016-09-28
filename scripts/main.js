@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+//import App from './App.vue'
 
 
 import { truncate, setAsBackground, epochToDate, unescape } from './filters'
@@ -12,7 +12,8 @@ Vue.filter('unescape', unescape)
 Vue.use(require('vue-resource'));
 
 /* eslint-disable no-new */
-new Vue({
-  el: 'body',
+
+/* new Vue({
+  el: '#app',
   components: { App }
-})
+}) */
