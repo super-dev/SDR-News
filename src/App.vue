@@ -1,5 +1,5 @@
 <template>
-  <header class="header-light">
+  <header class="header">
     <div class="container">
       <div class="site-branding header-left">
         <img class="site-logo" src="./assets/logo.png">
@@ -14,7 +14,7 @@
       </nav>
     </div>
   </header>
-  <div class="sub-header-light text-center section-medium">
+  <div class="sub-header text-center section-medium">
     <h1 class="h3">News for Web Developers</h1>
   </div>
   <div class="container-readable">
@@ -24,7 +24,7 @@
         </li>
     </ul>
   </div>
-  <footer class="footer-light section text-center">
+  <footer class="footer section text-center">
     <div class="container-content">
         To get a better understanding of how this boilerplate works, check out
         <a href="http://vuejs-templates.github.io/webpack" target="_blank">its documentation</a>.
