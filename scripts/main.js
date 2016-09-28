@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App'
+import App from './App.vue'
 
 
 import { truncate, setAsBackground, epochToDate, unescape } from './filters'
@@ -16,4 +16,3 @@ new Vue({
   el: 'body',
   components: { App }
 })
-

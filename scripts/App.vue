@@ -1,35 +1,37 @@
 <template>
-  <header class="header">
-    <div class="container">
-      <div class="site-branding header-left">
-        <img class="site-logo" src="./assets/logo.png">
+  <div>
+    <header class="header">
+      <div class="container">
+        <div class="site-branding header-left">
+          <img class="site-logo" src="./assets/logo.png">
+        </div>
+        <nav role="navigation">
+          <ul class="menu">
+            <li class="menu-item"><a href="https://superdevresources.com/">Articles</a></li>
+            <li class="menu-item current-menu-item"><a href="/">News</a></li>
+            <li class="menu-item"><a href="https://superdevresources.com/tools/">Tools </a></li>
+            <li class="menu-item"><a href="https://superdevresources.com/directory/">Directory</a></li>
+          </ul>
+        </nav>
       </div>
-      <nav role="navigation">
-        <ul class="menu">
-          <li class="menu-item"><a href="https://superdevresources.com/">Articles</a></li>
-          <li class="menu-item current-menu-item"><a href="/">News</a></li>
-          <li class="menu-item"><a href="https://superdevresources.com/tools/">Tools </a></li>
-          <li class="menu-item"><a href="https://superdevresources.com/directory/">Directory</a></li>
-        </ul>
-      </nav>
+    </header>
+    <div class="sub-header text-center section-medium">
+      <h1 class="h3">News for Web Developers</h1>
     </div>
-  </header>
-  <div class="sub-header text-center section-medium">
-    <h1 class="h3">News for Web Developers</h1>
-  </div>
-  <div class="container-readable">
-    <ul class="news-list">
-        <li v-for="obj in posts | orderBy 'data.created_utc' -1">
-            <post :item="obj"></post>
-        </li>
-    </ul>
-  </div>
-  <footer class="footer section text-center">
-    <div class="container-content">
-        To get a better understanding of how this boilerplate works, check out
-        <a href="http://vuejs-templates.github.io/webpack" target="_blank">its documentation</a>.
+    <div class="container-readable">
+      <ul class="news-list">
+          <li v-for="obj in posts | orderBy 'data.created_utc' -1">
+              <post :item="obj"></post>
+          </li>
+      </ul>
     </div>
-  </footer>
+    <footer class="footer section text-center">
+      <div class="container-content">
+          To get a better understanding of how this boilerplate works, check out
+          <a href="http://vuejs-templates.github.io/webpack" target="_blank">its documentation</a>.
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script>
@@ -46,7 +48,7 @@ export default {
 
 
   data () {
-      return { 
+      return {
           posts: []
       }
   },
@@ -125,13 +127,13 @@ export default {
 
 <style src="./../node_modules/mmcss/dist/mm.css"></style>
 
-<style scoped>    
+<style scoped>
     .news-list {
         margin-top: 20px;
         list-style: none;
         padding-left: 0;
     }
-    
+
     .news-list li {
         margin-bottom: 40px;
     }
