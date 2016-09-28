@@ -1,8 +1,8 @@
 import Vue from 'vue'
-//import App from './App.vue'
+import App from './App.vue'
 
+import { truncate, setAsBackground, epochToDate, unescape } from './lib/filters'
 
-import { truncate, setAsBackground, epochToDate, unescape } from './filters'
 // register filters globally
 Vue.filter('truncate', truncate)
 Vue.filter('setAsBackground', setAsBackground)
@@ -13,7 +13,7 @@ Vue.use(require('vue-resource'));
 
 /* eslint-disable no-new */
 
-/* new Vue({
-  el: '#app',
-  components: { App }
-}) */
+ new Vue({
+  el: '#app',  
+  render: (h) => h(App)
+})

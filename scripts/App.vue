@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="sub-header text-center section-medium">
+    <div class="sub-header text-center section">
       <h1 class="h3">News for Web Developers</h1>
     </div>
     <div class="container-readable">
       <ul class="news-list">
-          <li v-for="obj in posts | orderBy 'data.created_utc' -1">
+          <li v-for="obj in orderedPosts">
               <post :item="obj"></post>
           </li>
       </ul>
@@ -14,9 +14,8 @@
 </template>
 
 <script>
-
-import Post from './components/Post'
-
+import Post from './components/Post.vue'
+import {orderBy} from 'lodash/collection'
 
 export default {
   components: {
@@ -30,6 +29,12 @@ export default {
       return {
           posts: []
       }
+  },
+
+  computed: {
+    orderedPosts: function () {
+      return orderBy(this.posts, ['data.created_utc'], ['desc']);
+    }
   },
 
   created() {
@@ -48,7 +53,6 @@ export default {
             'php',
             'ProgrammerHumor',
             'ProWordPress',
-            'python',
             'reactjs',
             'Sass',
             'vuejs',
@@ -56,7 +60,6 @@ export default {
             'Web_Development',
             'web_programming',
             'webdev',
-            'webgl',
             'websecurity',
             'Wordpress'
           ];

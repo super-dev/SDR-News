@@ -1,5 +1,5 @@
 /*-----------------
-   Custom filters 
+   Custom filters
 -----------------*/
 var moment = require('moment');
 
@@ -11,7 +11,7 @@ export function truncate(value) {
 		return value;
 	}
 	else {
-		return value.substring(0, length) + '...';			
+		return value.substring(0, length) + '...';
 	}
 }
 
@@ -19,7 +19,10 @@ export function truncate(value) {
 // Filter that takes an image url and creates a CSS style.
 export function setAsBackground(value) {
 	if(value && value!='self' && value !='nsfw' && value != 'default' ) {
-		return 'background-image: url(' + value + ')';	
+		return 'background-image: url(' + value + ')';
+	}
+	else {
+		return "background-image: url('/img/default-icon.png')";
 	}
 }
 

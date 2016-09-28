@@ -1,8 +1,8 @@
 <template>
 <div class="media media-left">
-    <a :href="item.data.url | unescape" :style="item.data.thumbnail | setAsBackground" :title="item.data.title | unescape" target="_blank" class="thumbnail thumbnail-small"></a>
+    <a :href="url" :style="thumbnail" :title="title" target="_blank" class="thumbnail thumbnail-small"></a>
     <div class="media-body">
-        <a :href="item.data.url | unescape" :title="item.data.title | unescape" target="_blank" class="entry-title">
+        <a :href="url" :title="title" target="_blank" class="entry-title">
             <h2>
                     {{ item.data.title  | unescape | truncate }}
                     <span class="title-domain">({{item.data.domain}})</span>
@@ -10,7 +10,7 @@
         </a>
 
         <div class="entry-meta">
-            <a class="category" href="https://www.reddit.com/r/{{ item.data.subreddit }}" title="View subreddit" target="_blank">{{ item.data.subreddit | uppercase }}</a> • <a href="https://www.reddit.com/{{ item.data.permalink }}" title="View comments on Reddit"
+            <a class="category" v-bind:href="'https://www.reddit.com/r/' + item.data.subreddit" title="View subreddit" target="_blank">{{ subreddit }}</a> • <a v-bind:href="'https://www.reddit.com/' + item.data.permalink" title="View comments on Reddit"
                 target="_blank">{{ item.data.num_comments }} comments</a> • {{ item.data.created_utc | epochToDate }} via reddit
         </div>
     </div>
@@ -19,9 +19,25 @@
 
 
 <script>
+import { unescape, setAsBackground } from './../lib/filters'
+
 export default {
     name: 'Post',
-    props: ['item']
+    props: ['item'],
+    computed: {
+      url: function() {
+        return unescape(this.item.data.url);
+      },
+      title: function() {
+        return unescape(this.item.data.title);
+      },
+      thumbnail: function() {
+        return setAsBackground(this.item.data.thumbnail);
+      },
+      subreddit: function() {
+        return this.item.data.subreddit.toUpperCase();
+      }
+    }
 }
 </script>
 
@@ -30,7 +46,6 @@ export default {
     background-color: #000;
     background-blend-mode: screen;
     opacity: 0.8;
-    background-image: url('/static/img/default-icon.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

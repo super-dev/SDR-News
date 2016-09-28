@@ -5,8 +5,9 @@
   "author": "Kanishk Kunal",
   "license": "MIT",
   "dependencies": {
-    "moment": "^2.14.1",
+    "lodash": "^4.16.2",
     "mmcss": "^0.2.4",
+    "moment": "^2.14.1",
     "vue": "^2.0.0-rc.8",
     "vue-resource": "^1.0.3"
   },
