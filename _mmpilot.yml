@@ -1,6 +1,8 @@
 scripts:
   browserify:
     entries: ["main.js"]
+serve:
+  mode: "app"
 
 ## additional data for site available as site.{key} in pug templates
 site:

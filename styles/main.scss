@@ -16,14 +16,15 @@
     padding: 0 0.5em;
     margin-left: 0.5em;
     line-height: 2.1;
-    border-color: #e4e4e4;
   }
 }
 
 .news-source {
-  .label {
-    margin-right: 1em;
-    text-decoration: none;
+  .button {
+    margin-right: 0.5em;
+    font-size: 80%;
+    padding: 0 1em;
+    line-height: 2.2;
   }
 }
 
@@ -88,4 +89,11 @@
     font-size: 90%;
     font-weight: normal;
     letter-spacing: 0.04em;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all .2s ease;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0;
 }
