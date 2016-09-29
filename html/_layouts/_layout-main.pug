@@ -39,10 +39,16 @@ html(lang='en-US')
                 li.menu-item.current-menu-item
                   a(href="/") News
             div.header-right.hidden-mobile
-              a.button.button-ghost(href=site.twitter target="_blank")
-                | <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
-              a.button.button-ghost(href=site.github, target="_blank")
-                | <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
+              nav
+                ul.menu
+                  li.menu-item
+                    a(href="https://superdevresources.com/about/") About
+                  li.menu-item
+                    a(href=site.twitter target="_blank")
+                      | <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+                  li.menu-item
+                    a(href=site.github, target="_blank")
+                      | <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
 
     block content
     footer.footer
