@@ -10,7 +10,7 @@
         </h2>
         <div class="entry-meta">
             <a class="category" v-bind:href="'https://www.reddit.com/r/' + item.data.subreddit" title="View subreddit" target="_blank">{{ subreddit }}</a><span class="dot">•</span><a v-bind:href="'https://www.reddit.com/' + item.data.permalink" title="View comments on Reddit"
-                target="_blank">{{ item.data.num_comments }} comments</a><span class="dot">•</span>{{ item.data.created_utc | epochToDate }}
+                target="_blank">{{ item.data.num_comments }} comments</a><span class="dot">•</span>{{ item.data.created_utc | timeAgo }} ago
         </div>
     </div>
 </div>
