@@ -1,7 +1,13 @@
 <template>
   <div>
-    <div class="sub-header text-center section-medium">
-      <h1 class="h2 section-title">News for Web Developers</h1>
+    <div class="news-source container-readable section">
+      <!--<a class="label label-ghost" href="#">All</a>-->
+      <a class="label label-primary" href="#">reddit</a>
+      <a class="label label-ghost" href="#">Hacker News</a>
+      <!--<a class="label label-ghost" href="#">Medium</a>
+      <a class="label label-ghost" href="#">Product Hunt</a>
+      <a class="label label-ghost" href="#">Blogs</a>
+      <a class="label label-ghost" href="#">Curated</a>-->
     </div>
     <div class="container-readable">
       <ul class="news-list">

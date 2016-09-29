@@ -1,21 +1,35 @@
 @import "vars";
 @import "mmcss/src/mm";
 
+.site-branding img {
+  padding: 0;
+}
+
 .header {
   .menu {
-    font-size: 88%;
+    font-size: 82%;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
   }
 
   .button-ghost {
-    padding: 0 1em;
+    padding: 0 0.5em;
     margin-left: 0.5em;
+    line-height: 2.1;
+    border-color: #e4e4e4;
+  }
+}
+
+.news-source {
+  .label {
+    margin-right: 1em;
+    text-decoration: none;
   }
 }
 
 .news-list {
     list-style: none;
+    margin-top: 20px;
     padding-left: 0;
 }
 
@@ -45,6 +59,7 @@
 
 .entry-title {
     font-size: 24px;
+    margin-top: 0;
     margin-bottom: 8px;
 }
 
