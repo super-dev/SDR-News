@@ -18,7 +18,7 @@
 
 
 <script>
-import { unescape, setAsBackground } from './../lib/filters'
+import { unescape, setAsBackground } from './../filters'
 
 export default {
     name: 'Post',

@@ -1,19 +1,21 @@
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import App from './App.vue'
-
-import { truncate, setAsBackground, epochToDate, unescape } from './lib/filters'
+import * as filters from './filters'
 
 // register filters globally
-Vue.filter('truncate', truncate)
-Vue.filter('setAsBackground', setAsBackground)
-Vue.filter('epochToDate', epochToDate)
-Vue.filter('unescape', unescape)
+// register global utility filters.
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
 Vue.use(require('vue-resource'));
+
+Vue.use(VueRouter)
 
 /* eslint-disable no-new */
 
  new Vue({
-  el: '#app',  
+  el: '#app',
   render: (h) => h(App)
 })
