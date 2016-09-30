@@ -5,6 +5,7 @@
   "author": "Kanishk Kunal",
   "license": "MIT",
   "dependencies": {
+    "firebase": "^3.4.1",
     "lodash": "^4.16.2",
     "mmcss": "^0.2.4",
     "vue": "^2.0.0-rc.8",

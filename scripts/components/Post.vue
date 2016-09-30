@@ -10,7 +10,7 @@
         </h2>
         <div class="entry-meta">
             <a class="category" v-bind:href="'https://www.reddit.com/r/' + item.subreddit" title="View subreddit" target="_blank">{{ subreddit }}</a><span class="dot">•</span><a v-bind:href="'https://www.reddit.com/' + item.permalink" title="View comments on Reddit"
-                target="_blank">{{ item.num_comments }} comments</a><span class="dot">•</span>{{ item.created_utc | timeAgo }} ago
+                target="_blank">{{ item.num_comments }} comments</a><span class="dot">•</span>{{ item.time | timeAgo }} ago
         </div>
     </div>
 </div>
@@ -34,7 +34,7 @@ export default {
         return setAsBackground(this.item.thumbnail);
       },
       subreddit: function() {
-        return this.item.subreddit.toUpperCase();
+        return this.item.category.toUpperCase();
       }
     }
 }

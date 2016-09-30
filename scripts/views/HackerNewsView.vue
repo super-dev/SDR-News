@@ -4,6 +4,7 @@
 
 <script>
 import NewsList from './../components/NewsList.vue'
+import store from './../store'
 
 export default {
   name: 'hacker-news-view',
@@ -16,6 +17,7 @@ export default {
       }
   },
   beforeMount() {
+    this.posts = store.getHackerNewsPosts();
   }
 }
 </script>

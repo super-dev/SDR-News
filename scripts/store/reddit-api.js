@@ -37,6 +37,8 @@ export function fetchRedditPosts() {
 
 
           if(url_dict[post.url] != 1 && shouldAdd(post)) {
+            post.time = post.created_utc;
+            post.category = post.subreddit;
             posts.push(post);
             //remember that we added this url, to remove duplicates
             url_dict[post.url] = 1;
