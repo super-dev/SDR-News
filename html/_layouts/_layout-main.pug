@@ -52,7 +52,41 @@ html(lang='en-US')
 
     block content
     footer.footer
-      .container-content.section-large.text-center
-        p Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a> by <a href="http://kunruchcreations.com/">KunRuch Creations</a>.
+      .container-readable.section.text-center
+        a(href='https://superdevresources.com/')
+          img.footer-logo(src="/img/logo.png")
+        div Super Dev Resources is a popular destination for finding
+          br
+          | awesome free app and web development resources. <a class="text-small" href="https://superdevresources.com/about/">Learn More</a>
+        nav.section
+          ul.menu
+            li.menu-item
+              a(href=site.twitter target="_blank")
+                | <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+            li.menu-item
+              a(href=site.twitter target="_blank")
+                | <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+            li.menu-item
+              a(href=site.github, target="_blank")
+                | <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
+        nav.section
+          ul.menu
+            li.menu-item
+              a(href="https://superdevresources.com/") Articles
+            li.menu-item
+              a(href="https://superdevresources.com/directory/") Directory
+            li.menu-item
+              a(href="https://superdevresources.com/tools/") Tools
+            li.menu-item.current-menu-item
+              a(href="/") News
+            li.menu-item
+              a(href="https://superdevresources.com/about/") About
+            li.menu-item
+              a(href="https://superdevresources.com/privacy-policy/") Privacy Policy
+            li.menu-item
+              a(href="https://superdevresources.com/contact/") Contact
+          p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
+            br
+            | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a>.
   block scripts
   include ./../_includes/_analytics.pug
