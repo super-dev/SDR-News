@@ -41,6 +41,11 @@ export function fetchRedditPosts() {
             post.category = post.subreddit;
             post.category_url = 'https://www.reddit.com/r/' + post.subreddit;
             post.comments_url = 'https://www.reddit.com/' + post.permalink;
+            /*var thumbnail = post.thumbnail;
+            if(!thumbnail || thumbnail=='self' || thumbnail =='nsfw' || thumbnail == 'default' ) {
+          		post.thumbnail = "";
+              post.default_icon = "icon-reddit-alien";
+          	}*/ //disabled all thumbnails until we find a better way to display them
             posts.push(post);
             //remember that we added this url, to remove duplicates
             url_dict[post.url] = 1;

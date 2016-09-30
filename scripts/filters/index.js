@@ -13,17 +13,6 @@ export function truncate(value) {
 	}
 }
 
-
-// Filter that takes an image url and creates a CSS style.
-export function setAsBackground(value) {
-	if(value && value!='self' && value !='nsfw' && value != 'default' ) {
-		return 'background-image: url(' + value + ')';
-	}
-	else {
-		return "background-image: url('/img/default-icon.png')";
-	}
-}
-
 // Filter that unescape URL
 export function unescape(value) {
 	var textArea = document.createElement('textarea');

@@ -1,6 +1,8 @@
 <template>
 <div class="media media-left">
-    <a :href="url" :style="thumbnail" :title="title" target="_blank" class="thumbnail thumbnail-small"></a>
+    <a :href="url" :title="title" target="_blank" class="thumbnail thumbnail-small">
+      <img :src="'https://www.google.com/s2/favicons?domain_url='+item.url"></img>
+    </a>
     <div class="media-body">
         <h2 class="entry-title">
             <a :href="url" :title="title" target="_blank">
@@ -22,7 +24,7 @@
 
 
 <script>
-import { unescape, setAsBackground } from './../filters'
+import { unescape } from './../filters'
 
 export default {
     name: 'Post',
@@ -33,9 +35,6 @@ export default {
       },
       title: function() {
         return unescape(this.item.title);
-      },
-      thumbnail: function() {
-        return setAsBackground(this.item.thumbnail);
       }
     }
 }
