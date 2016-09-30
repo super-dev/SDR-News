@@ -11,17 +11,18 @@ var database = firebase.database();
 export function fetchHackerNewsPosts() {
   var posts = [];
   var topStories = database.ref('v0/topstories').limitToFirst(50);
-  topStories.on('value', function(snapshot) {
+  topStories.once('value', function(snapshot) {
     snapshot.val().forEach(function(itemId) {
       var postItem = database.ref('v0/item/'+itemId);
-      postItem.on('value', function(snapshot) {
+      postItem.once('value', function(snapshot) {
         var post = snapshot.val();
+        if(!post.url) {
+          post.url = "https://news.ycombinator.com/item?id=" + post.id;
+        }
         post.domain = url.parse(post.url).hostname;
         post.num_comments = post.descendants;
         post.category = post.type;
         posts.push(post);
-        console.log(post.title);
-        console.log("Descendencts: " + post.descendants);
       });
     });
   });
