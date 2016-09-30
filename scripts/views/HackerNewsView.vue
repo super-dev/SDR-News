@@ -1,11 +1,21 @@
 <template>
-  <div class="container-readable">
-    Hello from Hacker News View
-  </div>
+  <news-list :posts="posts"></news-list>
 </template>
 
 <script>
+import NewsList from './../components/NewsList.vue'
+
 export default {
-  name: 'hacker-news-view'
+  name: 'hacker-news-view',
+  components: {
+    NewsList
+  },
+  data () {
+      return {
+          posts: []
+      }
+  },
+  beforeMount() {
+  }
 }
 </script>

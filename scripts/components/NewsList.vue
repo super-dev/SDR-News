@@ -20,7 +20,7 @@ export default {
   props: ['posts'],
   computed: {
     orderedPosts: function () {
-      return orderBy(this.posts, ['data.created_utc'], ['desc']);
+      return orderBy(this.posts, ['created_utc'], ['desc']);
     }
   },
 }
