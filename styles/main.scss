@@ -26,6 +26,16 @@
     padding: 0 1em;
     line-height: 2.2;
   }
+
+  .button-reddit.button-primary {
+    background-color: #5f99cf;
+    border-color: #5f99cf;
+  }
+
+  .button-hacker-news.button-primary {
+    background-color: #ff6600;
+    border-color: #ff6600;
+  }
 }
 
 .news-list {

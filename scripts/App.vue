@@ -2,11 +2,11 @@
   <div>
     <div class="news-source container-readable section">
       <!--<a class="label label-ghost" href="#">All</a>-->
-      <router-link to="reddit" class="button button-ghost" active-class="button-primary">
+      <router-link to="reddit" class="button button-ghost button-reddit" active-class="button-primary">
         <svg class="icon icon-reddit-alien"><use xlink:href="#icon-reddit-alien"></use></svg>
         reddit
       </router-link>
-      <router-link to="hacker-news" class="button button-ghost" active-class="button-primary">
+      <router-link to="hacker-news" class="button button-ghost button-hacker-news" active-class="button-primary">
           <svg class="icon icon-hacker-news"><use xlink:href="#icon-hacker-news"></use></svg>
           Hacker News
       </router-link>

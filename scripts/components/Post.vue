@@ -13,7 +13,7 @@
         <div class="entry-meta">
             <a class="category" v-if="item.category" :href="item.category_url" title="View subreddit" target="_blank">{{ item.category }}</a>
             <span class="dot" v-if="item.category">•</span>
-            <a :href="item.comments_url" title="View comments on Reddit"
+            <a :href="item.comments_url" title="View comments"
                 target="_blank">{{ item.num_comments }} comments</a>
             <span class="dot">•</span>
             {{ item.time | timeAgo }} ago
