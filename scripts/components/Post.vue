@@ -9,8 +9,12 @@
             <span class="title-domain">({{item.domain}})</span>
         </h2>
         <div class="entry-meta">
-            <a class="category" v-bind:href="'https://www.reddit.com/r/' + item.subreddit" title="View subreddit" target="_blank">{{ subreddit }}</a><span class="dot">•</span><a v-bind:href="'https://www.reddit.com/' + item.permalink" title="View comments on Reddit"
-                target="_blank">{{ item.num_comments }} comments</a><span class="dot">•</span>{{ item.time | timeAgo }} ago
+            <a class="category" v-if="item.category" :href="item.category_url" title="View subreddit" target="_blank">{{ item.category }}</a>
+            <span class="dot" v-if="item.category">•</span>
+            <a :href="item.comments_url" title="View comments on Reddit"
+                target="_blank">{{ item.num_comments }} comments</a>
+            <span class="dot">•</span>
+            {{ item.time | timeAgo }} ago
         </div>
     </div>
 </div>
@@ -32,9 +36,6 @@ export default {
       },
       thumbnail: function() {
         return setAsBackground(this.item.thumbnail);
-      },
-      subreddit: function() {
-        return this.item.category.toUpperCase();
       }
     }
 }

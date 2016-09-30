@@ -16,12 +16,13 @@ export function fetchHackerNewsPosts() {
       var postItem = database.ref('v0/item/'+itemId);
       postItem.once('value', function(snapshot) {
         var post = snapshot.val();
-        if(!post.url) {
-          post.url = "https://news.ycombinator.com/item?id=" + post.id;
+
+        post.comments_url = "https://news.ycombinator.com/item?id=" + post.id;
+        if(!post.url) { //self post
+          post.url = post.comments_url;
         }
         post.domain = url.parse(post.url).hostname;
         post.num_comments = post.descendants;
-        post.category = post.type;
         posts.push(post);
       });
     });
