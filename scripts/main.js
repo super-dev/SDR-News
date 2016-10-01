@@ -12,7 +12,7 @@ Object.keys(filters).forEach(key => {
 Vue.use(require('vue-resource'));
 
 //google analytics for page views
-if(ga) {
+if(typeof ga !== 'undefined') {
   router.beforeEach(function (to, from, next) {
     ga('set', 'page', to.path);
     ga('send', 'pageview');
