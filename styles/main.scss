@@ -19,17 +19,6 @@
   }
 }
 
-@media (max-width: $size-small-screen) {
-  .header-left {
-    position: relative;
-    left: 0;
-
-    .site-branding img {
-      float: none;
-    }
-  }
-}
-
 .main {
   min-height: 480px;
 }
@@ -117,4 +106,19 @@
 .footer-logo {
   height: 48px;
   width: auto;
+}
+
+@media (max-width: $size-small-screen) {
+  .header-left {
+    position: relative;
+    left: 0;
+
+    .site-branding img {
+      float: none;
+    }
+  }
+
+  .entry-title {
+    font-size: 19px;
+  }
 }
