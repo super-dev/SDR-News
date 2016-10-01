@@ -32,7 +32,7 @@
     "dev-build": "mmpilot build -d",
     "dev-watch": "mmpilot watch -d",
     "dev": "npm-run-all clean dev-build --parallel dev-watch serve",
-    "deploy": "npm-run-all clean build && mmpilot deploy"
+    "deploy": "npm run clean && npm run build && firebase deploy"
   },
   "browserify": {
     "transform": [
