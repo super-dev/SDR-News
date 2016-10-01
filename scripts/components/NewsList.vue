@@ -1,5 +1,6 @@
 <template>
   <div class="container-readable">
+    <p v-if="!orderedPosts || orderedPosts < 1">Loading...</p>
     <ul class="news-list">
         <li v-for="obj in orderedPosts">
             <post :item="obj"></post>
