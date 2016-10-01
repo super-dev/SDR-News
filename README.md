@@ -1,8 +1,10 @@
 [![Build Status](https://travis-ci.org/super-dev/SDR-News.svg?branch=master)](https://travis-ci.org/super-dev/SDR-News)
 
-# sdr-news
+# [SDR News](https://news.superdevresources.com)
 
-> Web Develepment News (news.superdevresources.com)
+Latest news for Web Developers aggregated from multiple sources such as sub-reddits and HackerNews.
+
+[![alt SDR - News](https://news.superdevresources.com/img/featured.jpg "News for Web Developers")](https://news.superdevresources.com)
 
 
 ## Credits
