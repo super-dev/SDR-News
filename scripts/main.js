@@ -11,6 +11,15 @@ Object.keys(filters).forEach(key => {
 
 Vue.use(require('vue-resource'));
 
+//google analytics for page views
+if(ga) {
+  router.beforeEach(function (to, from, next) {
+    ga('set', 'page', to.path);
+    ga('send', 'pageview');
+    next();
+  });
+}
+
 /* eslint-disable no-new */
 const app = new Vue({
   router,
