@@ -1,6 +1,10 @@
 @import "vars";
 @import "mmcss/src/mm";
 
+body {
+  background-color: #fafafa;
+}
+
 .site-branding img {
   padding: 0;
 }
@@ -23,23 +27,37 @@
   min-height: 480px;
 }
 
+.container-readable {
+  max-width: 940px;
+}
+
 .news-source {
   .button {
     margin-right: 0.5em;
     font-size: 80%;
     padding: 0 1em;
     line-height: 2.2;
+    background-color: #fff;
   }
 
-  .button-reddit.button-primary {
+  .button-reddit:hover, .button-reddit.button-primary {
     background-color: #5f99cf;
     border-color: #5f99cf;
+    color: #fff;
   }
 
-  .button-hacker-news.button-primary {
+  .button-hacker-news:hover, .button-hacker-news.button-primary {
     background-color: #ff6600;
     border-color: #ff6600;
+    color: #fff;
   }
+}
+
+.news-container {
+  background: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: $size-default-radius;
+  border: 1px solid $color-default-border;
 }
 
 .news-list {
@@ -70,7 +88,7 @@
 }
 
 .entry-title a:visited {
-    color: #999;
+    color: #888;
 }
 
 .entry-title .title-domain {
@@ -101,6 +119,10 @@
 }
 .fade-enter, .fade-leave-active {
   opacity: 0;
+}
+
+.footer {
+  border-top: 0;
 }
 
 .footer-logo {
