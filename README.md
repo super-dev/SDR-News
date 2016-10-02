@@ -4,7 +4,13 @@
 
 Latest news for Web Developers aggregated from multiple sources such as sub-reddits and HackerNews.
 
-[![alt SDR - News](https://news.superdevresources.com/img/featured.png "News for Web Developers")](https://news.superdevresources.com)
+<p align="center">
+<a href="https://news.superdevresources.com/" title="News for Web Developers">
+<img src="http://news.superdevresources.com/img/featured.png" alt="SDR News"></img>
+<br>
+View News Site
+</a>
+</p>
 
 
 ## Credits
