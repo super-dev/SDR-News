@@ -1,90 +1,16 @@
-@import "vars";
-@import "mmcss/src/mm";
-
-body {
-  background-color: #fafafa;
-}
-
-.site-branding img {
-  padding: 0;
-}
-
-.header {
-  .menu {
-    font-size: 82%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .button-ghost {
-    padding: 0 0.5em;
-    margin-left: 0.5em;
-    line-height: 2.1;
-  }
-}
-
-.main {
-  min-height: 480px;
-}
+@import "sdr/sdr";
 
 .container-readable {
-  max-width: 940px;
-}
-
-.news-source {
-  .button {
-    margin-right: 0.5em;
-    font-size: 80%;
-    padding: 0 1em;
-    line-height: 2.2;
-    background-color: #fff;
-  }
-
-  .button-reddit:hover, .button-reddit.button-primary {
-    background-color: #5f99cf;
-    border-color: #5f99cf;
-    color: #fff;
-  }
-
-  .button-hacker-news:hover, .button-hacker-news.button-primary {
-    background-color: #ff6600;
-    border-color: #ff6600;
-    color: #fff;
-  }
-}
-
-.news-container {
-  background: #fff;
-  padding: 0.5rem 2rem;
-  border-radius: $size-default-radius;
-  border: 1px solid $color-default-border;
-}
-
-.news-list {
-    list-style: none;
-    margin-top: 20px;
-    padding-left: 0;
-}
-
-.news-list li {
-    margin-bottom: 30px;
+  max-width: 868px;
 }
 
 .thumbnail {
-    background-color: #fff;
     margin-top: 3px;
-    border-radius: 4px;
     padding: 0;
 }
 
 .media-left .thumbnail-small + .media-body {
   margin-left: 4px;
-}
-
-.entry-title {
-    font-size: 21px;
-    margin-top: 0;
-    margin-bottom: 3px;
 }
 
 .entry-title a:visited {
@@ -117,30 +43,7 @@ body {
 .fade-enter-active, .fade-leave-active {
   transition: all .2s ease;
 }
+
 .fade-enter, .fade-leave-active {
   opacity: 0;
-}
-
-.footer {
-  border-top: 0;
-}
-
-.footer-logo {
-  height: 48px;
-  width: auto;
-}
-
-@media (max-width: $size-small-screen) {
-  .header-left {
-    position: relative;
-    left: 0;
-
-    .site-branding img {
-      float: none;
-    }
-  }
-
-  .entry-title {
-    font-size: 19px;
-  }
-}
+} 

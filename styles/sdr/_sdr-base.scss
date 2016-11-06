@@ -1,0 +1,38 @@
+.site-branding img {
+  padding: 0;
+}
+
+.header {
+  .menu {
+    font-size: 82%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .button {
+    padding: 0 0.5em;
+    margin-left: 0.5em;
+    line-height: 2.1;
+  }
+
+  h1 {
+    margin-top: 0;
+    line-height: $size-site-header-height;
+    font-weight: normal;
+    display: inline-block;
+  }
+}
+
+.main {
+  min-height: 480px;
+}
+
+
+.footer-logo {
+  height: 48px;
+  width: auto;
+}
+
+ins {
+  background: transparent;
+}

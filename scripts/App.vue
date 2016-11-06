@@ -1,6 +1,6 @@
 <template>
-  <div class="container-readable">
-    <div class="news-source section">
+  <div class="container-content">
+    <div class="sdr-submenu container-readable section">
       <!--<a class="label label-ghost" href="#">All</a>-->
       <router-link to="reddit" class="button button-ghost button-reddit" active-class="button-primary">
         <svg class="icon icon-reddit-alien"><use xlink:href="#icon-reddit-alien"></use></svg>

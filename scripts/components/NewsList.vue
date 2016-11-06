@@ -1,7 +1,7 @@
 <template>
-  <div class="news-container">
+  <div class="container-readable">
     <p v-if="!orderedPosts || orderedPosts < 1">Loading...</p>
-    <ul class="news-list">
+    <ul class="sdr-list">
         <li v-for="obj in orderedPosts">
             <post :item="obj"></post>
         </li>
