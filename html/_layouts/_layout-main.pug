@@ -1,3 +1,4 @@
+include ./../_includes/_mixins.pug
 doctype html
 block vars
 html(lang='en-US')
@@ -28,28 +29,16 @@ html(lang='en-US')
               a(href='https://superdevresources.com/').site-branding
                 img(src="/img/sdr-logo.png")
                 h1.title.screen-reader-text SDR News
-            nav(rol="navigation").hidden-mobile
-              ul.menu
-                li.menu-item
-                  a(href="https://superdevresources.com/") Articles
-                li.menu-item
-                  a(href="https://superdevresources.com/directory/") Directory
-                li.menu-item
-                  a(href="https://superdevresources.com/tools/") Tools
-                li.menu-item.current-menu-item
-                  a(href="/") News
-            div.header-right.hidden-mobile
-              nav
-                ul.menu
-                  li.menu-item
-                    a(href="https://superdevresources.com/about/") About
-                  li.menu-item
-                    a(href=site.twitter target="_blank")
-                      | <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
-                  li.menu-item
-                    a(href=site.github, target="_blank")
-                      | <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
-
+            .menu-toggle
+              input(type="checkbox")#menu-toggle
+              label(for="menu-toggle").header-right
+                span.css-icon-hamburger
+                  span Toggle
+                span Menu
+              .menu-toggle-content
+                +menu(data.menu.main, 'menu')
+                .header-right
+                  +menu(data.menu.secondary, 'menu')
     block content
     footer.footer
       .container-readable.section.text-center
@@ -58,35 +47,12 @@ html(lang='en-US')
         div Super Dev Resources is a popular destination for finding
           br
           | awesome free app and web development resources. <a class="text-small" href="https://superdevresources.com/about/">Learn More</a>
-        nav.section
-          ul.menu
-            li.menu-item
-              a(href=site.twitter target="_blank")
-                | <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
-            li.menu-item
-              a(href=site.twitter target="_blank")
-                | <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
-            li.menu-item
-              a(href=site.github, target="_blank")
-                | <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
-        nav.section
-          ul.menu
-            li.menu-item
-              a(href="https://superdevresources.com/") Articles
-            li.menu-item
-              a(href="https://superdevresources.com/directory/") Directory
-            li.menu-item
-              a(href="https://superdevresources.com/tools/") Tools
-            li.menu-item.current-menu-item
-              a(href="/") News
-            li.menu-item
-              a(href="https://superdevresources.com/about/") About
-            li.menu-item
-              a(href="https://superdevresources.com/privacy-policy/") Privacy Policy
-            li.menu-item
-              a(href="https://superdevresources.com/contact/") Contact
-          p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
-            br
-            | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a>.
+        div
+          +social(data.menu.social)
+        div.section
+          +menu(data.menu.footer, 'menu')
+        p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
+          br
+          | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a>.
   include ./../_includes/_analytics.pug
   block scripts
