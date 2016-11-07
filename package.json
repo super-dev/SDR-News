@@ -5,6 +5,7 @@
   "author": "Kanishk Kunal",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.15.2",
     "firebase": "^3.5.3",
     "lodash": "^4.16.6",
     "mmcss": "^0.3.2",

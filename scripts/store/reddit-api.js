@@ -64,8 +64,7 @@ export function fetchRedditPosts(category) {
 
           if(url_dict[post.url] != 1 && shouldAdd(post)) {
             post.time = post.created_utc;
-            post.category = post.subreddit;
-            post.category_url = 'https://www.reddit.com/r/' + post.subreddit;
+            post.categories = [{ title: post.subreddit, url: 'https://www.reddit.com/r/' + post.subreddit}];
             post.comments_url = 'https://www.reddit.com/' + post.permalink;
             /*var thumbnail = post.thumbnail;
             if(!thumbnail || thumbnail=='self' || thumbnail =='nsfw' || thumbnail == 'default' ) {

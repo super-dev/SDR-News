@@ -4,7 +4,7 @@
 
 <script>
 import NewsList from './../components/NewsList.vue'
-import store from './../store'
+import {fetchMediumPosts} from './../apis/medium-api'
 
 export default {
   name: 'medium-view',
@@ -26,7 +26,10 @@ export default {
   methods: {
     fetchData () {
       this.posts = []
-      this.posts = store.getRedditPosts(this.$route.params.category)
+      fetchMediumPosts(this.$route.params.category, this.loadPosts)
+    },
+    loadPosts (result) {
+      this.posts = result
     }
   }
 }

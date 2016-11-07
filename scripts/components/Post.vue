@@ -11,11 +11,13 @@
             <span class="title-domain">({{item.domain}})</span>
         </h2>
         <div class="entry-meta">
-            <a class="category" v-if="item.category" :href="item.category_url" title="View subreddit" target="_blank">{{ item.category }}</a>
-            <span class="dot" v-if="item.category">•</span>
+            <span v-for="category in item.categories">
+              <a class="category" :href="category.url" target="_blank">{{ category.title }}</a>
+            </span>
+            <span class="dot" v-if="item.categories">•</span>
             <a :href="item.comments_url" title="View comments"
-                target="_blank">{{ item.num_comments }} comments</a>
-            <span class="dot">•</span>
+                target="_blank" v-if="item.comments_url">{{ item.num_comments }} comments</a>
+            <span class="dot" v-if="item.comments_url">•</span>
             {{ item.time | timeAgo }} ago
         </div>
     </div>
