@@ -14,7 +14,14 @@ const Tags = {
     ]
 }
 
+var mediumCache = {}
+
 export function fetchMediumPosts(category, cb) {
+
+  if(mediumCache[category]) {
+    cb(mediumCache[category])
+    return
+  }
   
   var query = 'select * from rss where url in ('
 
@@ -54,7 +61,7 @@ export function fetchMediumPosts(category, cb) {
           console.log(JSON.stringify(post, null, 4))
         }
       })
-
+      mediumCache[category] = posts
       cb(posts)
     })
     .catch(function (error) {
