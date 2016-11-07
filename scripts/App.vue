@@ -18,9 +18,16 @@
       <div class="one-half">
         <nav>
           <ul class="news-scoure-menu">
-            <li v-for="link in links">
+            <li class="menu-header">Communities</li>
+            <li v-for="link in links.communities">
               <router-link :to="link.to" active-class="active">
                 <svg :class="link.iconClass"><use v-bind:xlink:href=link.iconID></use></svg>
+                {{ link.title }}
+              </router-link>
+            </li>
+            <li class="menu-header">Blogs</li>
+            <li v-for="link in links.blogs">
+              <router-link :to="link.to" active-class="active">
                 {{ link.title }}
               </router-link>
             </li>

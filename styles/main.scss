@@ -6,19 +6,21 @@
 
 ul.news-scoure-menu {
   margin: 0;
-  text-align: right;
   font-size: 90%;
 
   li {
     margin: 0;
+    height: 28px;
+    line-height: 28px;
   }
 
   li a {
     display: block;
     width: 100%;
     opacity: 0.6;
-    padding: 3px 20px;
+    padding: 3px 20px 3px 0;
     height: 28px;
+    line-height: 28px;
 
     svg {
       margin-right: 4px;

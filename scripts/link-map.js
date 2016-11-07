@@ -1,18 +1,30 @@
-const designLinks = [
-  {to: 'reddit', iconClass: 'icon icon-reddit-alien', iconID: '#icon-reddit-alien', title: 'reddit'},
-  {to: 'medium', iconClass: 'icon icon-medium', iconID: '#icon-medium', title: 'Medium'}
-]
+const designLinks = {
+  communities: [
+    {to: 'reddit', iconClass: 'icon icon-reddit-alien', iconID: '#icon-reddit-alien', title: 'reddit'},
+    {to: 'medium', iconClass: 'icon icon-medium', iconID: '#icon-medium', title: 'Medium'}
+  ],
+  blogs: [
+    {to: 'smashing-magazine', title: 'Smashing Magazine'},
+    {to: 'sdr', title: 'Super Dev Resources'},
+  ]
+}
 
-const developmentLinks = [
-  {to: 'reddit', iconClass: 'icon icon-reddit-alien', iconID: '#icon-reddit-alien', title: 'reddit'},
-  {to: 'medium', iconClass: 'icon icon-medium', iconID: '#icon-medium', title: 'Medium'},
-  {to: 'hacker-news', iconClass: 'icon icon-hacker-news', iconID: '#icon-hacker-news', title: 'Hacker News'}
-]
+const developmentLinks = {
+  communities: [
+    {to: 'reddit', iconClass: 'icon icon-reddit-alien', iconID: '#icon-reddit-alien', title: 'reddit'},
+    {to: 'medium', iconClass: 'icon icon-medium', iconID: '#icon-medium', title: 'Medium'},
+    {to: 'hacker-news', iconClass: 'icon icon-hacker-news', iconID: '#icon-hacker-news', title: 'Hacker News'}
+  ],
+  blogs: []
+}
 
-const marketingLinks = [
-  {to: 'reddit', iconClass: 'icon icon-reddit-alien', iconID: '#icon-reddit-alien', title: 'reddit'},
-  {to: 'medium', iconClass: 'icon icon-medium', iconID: '#icon-medium', title: 'Medium'}
-]
+const marketingLinks = {
+  communities: [
+    {to: 'reddit', iconClass: 'icon icon-reddit-alien', iconID: '#icon-reddit-alien', title: 'reddit'},
+    {to: 'medium', iconClass: 'icon icon-medium', iconID: '#icon-medium', title: 'Medium'}
+  ],
+  blogs: []
+}
 
 const linkMap = {
   'design': designLinks,
