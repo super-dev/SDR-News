@@ -31,17 +31,15 @@ export function fetchBlogPosts(id, cb) {
       }
     })
     .then(function (response) {
-      var posts = []      
-      var url_dict = []
+      var posts = []
 
       response.data.query.results.item.forEach( function(post) {
-        if(!url_dict[post.guid.content] && shouldAdd(post)) {
-          console.log(JSON.stringify(post, null, 4))
+        if(shouldAdd(post)) {
+          // console.log(JSON.stringify(post, null, 4))
           post.url = post.link
           post.time = Math.floor((new Date(post.pubDate)).getTime() / 1000)
           post.author = post.creator
           posts.push(post)
-          url_dict[post.guid.content] = true
         }
       })
       blogCache[id] = posts
