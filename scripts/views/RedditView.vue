@@ -16,9 +16,18 @@ export default {
           posts: []
       }
   },
-
-  beforeMount() {
-    this.posts = store.getRedditPosts();
+  created () {
+    this.fetchData()
+  },
+  watch: {
+    // call again the method if the route changes
+    '$route': 'fetchData'
+  },
+  methods: {
+    fetchData () {
+      this.posts = []
+      this.posts = store.getRedditPosts(this.$route.params.category)
+    }
   }
 }
 </script>

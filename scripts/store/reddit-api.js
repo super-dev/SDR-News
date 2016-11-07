@@ -1,6 +1,22 @@
 import Vue from 'vue'
 
-const subreddits = [
+const subreddits = {
+      'design': [
+        'Design',
+        'designinspire',
+        'designthought',
+        'designtools',
+        'graphic_design',
+        'idesignedthis',
+        'learndesign',
+        'learnwebdesign',
+        'logodesign',
+        'typography',
+        'UI_Design',
+        'UnsolicitedRedesigns',
+        'userexperience',
+        'web_design'],
+      'development': [
         'angular2',
         'browsers',
         'coding',
@@ -17,20 +33,30 @@ const subreddits = [
         'reactjs',
         'Sass',
         'vuejs',
-        'web_design',
         'Web_Development',
         'web_programming',
         'webdev',
         'websecurity',
-        'Wordpress'
-      ];
+        'Wordpress'],
+      'marketing': [
+        'AppBusiness',
+        'bigseo',
+        'content_marketing',
+        'marketing',
+        'Mobile_Marketing',
+        'SEO',
+        'socialmedia',
+        'startups',
+        'webmarketing'
+      ]
+};
 
-export function fetchRedditPosts() {
+export function fetchRedditPosts(category) {
   var posts = [];
   var url_dict = [];
 
-  for (var index = 0; index < subreddits.length; index++) {
-    Vue.http.get("https://www.reddit.com/r/"+ subreddits[index] +"/new.json?limit=20")
+  for (var index = 0; index < subreddits[category].length; index++) {
+    Vue.http.get("https://www.reddit.com/r/"+ subreddits[category][index] +"/new.json?limit=20")
     .then(function(resp){
         for (var i = 0; i < resp.data.data.children.length; i++) {
           var post = resp.data.data.children[i].data;
