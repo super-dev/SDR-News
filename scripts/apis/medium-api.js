@@ -2,6 +2,15 @@ import axios from 'axios'
 import url from 'url'
 
 const Tags = {
+  'design': [
+    'design',
+    'responsive-design',
+    'ui-design',
+    'user-experience',
+    'ux',
+    'ux-design',
+    'web-design'
+  ],
   'development': [
     'css',
     'html5',
@@ -10,8 +19,15 @@ const Tags = {
     'nodejs',
     'front-end-development',
     'vuejs',
-    'web-development',
-    ]
+    'web-development'],
+  'marketing': [
+    'blogging',
+    'marketing',
+    'seo',
+    'social-media',
+    'startup',
+
+  ]
 }
 
 var mediumCache = {}
@@ -45,10 +61,15 @@ export function fetchMediumPosts(category, cb) {
 
       response.data.query.results.item.forEach( function(post) {
         if(!url_dict[post.guid.content] && shouldAdd(post)) {
+          console.log(JSON.stringify(post, null, 4))
           post.url = post.link
           post.domain = url.parse(post.link).hostname;
           post.time = Math.floor((new Date(post.pubDate)).getTime() / 1000)
           var categories = []
+          if( typeof post.category === 'string' ) {
+              // convert to array if it is not already
+              post.category = [ post.category ];
+          }
           post.category.forEach(function (tag) {
             console.log(tag)
             if(categories.length < 3 && shouldIncludeTag(Tags[category], tag)) {
@@ -58,7 +79,6 @@ export function fetchMediumPosts(category, cb) {
           post.categories = categories
           posts.push(post)
           url_dict[post.guid.content] = true
-          console.log(JSON.stringify(post, null, 4))
         }
       })
       mediumCache[category] = posts
@@ -77,7 +97,7 @@ function shouldIncludeTag(list, tag) {
 }
 
 function shouldAdd(post) {
-  return isAsciiOnly(post.title)
+  return isAsciiOnly(post.title) && post.title.indexOf("http://") < 0 && post.title.indexOf("https://") < 0
 }
 
 function isAsciiOnly(str) {
