@@ -15,7 +15,7 @@ export default new Router({
     { path: '/:category/reddit', component: RedditView },
     { path: '/:category/medium', component: MediumView },
     { path: '/:category/hacker-news', component: HackerNewsView },
-    { path: '/:category/:blog', component: BlogFeedView },
+    { path: '/:category/:blogID', component: BlogFeedView },
     { path: '/:category', redirect: '/:category/reddit' },
     { path: '*', redirect: '/design/reddit' }
   ]

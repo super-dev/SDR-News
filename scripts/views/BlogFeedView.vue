@@ -4,7 +4,7 @@
 
 <script>
 import NewsList from './../components/NewsList.vue'
-import {fetchMediumPosts} from './../apis/medium-api'
+import {fetchBlogPosts} from './../apis/blog-feed-api'
 
 export default {
   name: 'blog-feed-view',
@@ -26,7 +26,7 @@ export default {
   methods: {
     fetchData () {
       this.posts = []
-      fetchMediumPosts(this.$route.params.category, this.loadPosts)
+      fetchBlogPosts(this.$route.params.blogID, this.loadPosts)
     },
     loadPosts (result) {
       this.posts = result

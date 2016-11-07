@@ -61,7 +61,7 @@ export function fetchMediumPosts(category, cb) {
 
       response.data.query.results.item.forEach( function(post) {
         if(!url_dict[post.guid.content] && shouldAdd(post)) {
-          console.log(JSON.stringify(post, null, 4))
+          // console.log(JSON.stringify(post, null, 4))
           post.url = post.link
           post.domain = url.parse(post.link).hostname;
           post.time = Math.floor((new Date(post.pubDate)).getTime() / 1000)
@@ -71,7 +71,7 @@ export function fetchMediumPosts(category, cb) {
               post.category = [ post.category ];
           }
           post.category.forEach(function (tag) {
-            console.log(tag)
+            // console.log(tag)
             if(categories.length < 3 && shouldIncludeTag(Tags[category], tag)) {
               categories.push( { title: tag, url: "https://medium.com/tag/"+tag+"/latest"})
             }

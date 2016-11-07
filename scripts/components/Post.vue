@@ -8,13 +8,17 @@
             <a :href="url" :title="title" target="_blank">
                 {{ item.title  | unescape | truncate }}
             </a>
-            <span class="title-domain">({{item.domain}})</span>
+            <span class="title-domain" v-if="item.domain">({{item.domain}})</span>
         </h2>
         <div class="entry-meta">
             <span v-for="category in item.categories">
               <a class="category" :href="category.url" target="_blank">{{ category.title }}</a>
             </span>
-            <span class="dot" v-if="item.categories">•</span>
+            <span class="dot" v-if="item.categories">•</span> 
+            <span v-if="item.author">
+              by {{ item.author }}
+            </span>
+            <span class="dot" v-if="item.author">•</span>
             <a :href="item.comments_url" title="View comments"
                 target="_blank" v-if="item.comments_url">{{ item.num_comments }} comments</a>
             <span class="dot" v-if="item.comments_url">•</span>
