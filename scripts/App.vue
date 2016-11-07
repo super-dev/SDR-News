@@ -20,8 +20,8 @@
           <ul class="news-scoure-menu">
             <li v-for="link in links">
               <router-link :to="link.to" active-class="active">
-                <svg :class="link.iconClass"><use v-bind:xlink:href=link.iconID></use></svg>
                 {{ link.title }}
+                <svg :class="link.iconClass"><use v-bind:xlink:href=link.iconID></use></svg>
               </router-link>
             </li>
           </ul>
