@@ -42,15 +42,7 @@ import LinksMap from './link-map'
 export default {
     computed: {
       links: function() {
-        console.log(this.category)
-        return LinksMap[this.category]
-      },
-      category: function() {
-        var paths = this.$route.path.split('/')
-        if(paths.length >= 2) {
-          return paths[1]
-        }
-        else return 'design'
+        return LinksMap[this.$route.params.category]
       }
     }
 }
