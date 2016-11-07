@@ -5,15 +5,33 @@
 }
 
 ul.news-scoure-menu {
-  margin: 0 2em 0 0;
+  margin: 0;
   text-align: right;
+  font-size: 90%;
+
+  li {
+    margin: 0;
+  }
 
   li a {
+    display: block;
+    width: 100%;
     opacity: 0.6;
+    padding: 3px 20px;
+    height: 28px;
+
+    svg {
+      margin-right: 4px;
+    }
+  }
+
+  li a.active, li a:hover {
+    text-decoration: none;
+    opacity: 1;
   }
 
   li a.active {
-    opacity: 1;
+    font-size: 110%;
   }
 }
 
