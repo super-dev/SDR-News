@@ -1,8 +1,10 @@
 import axios from 'axios'
 
 const BlogMap = {
+  'graphic-flip': 'https://graphicflip.com/feed/',
   'smashing-magazine': 'https://www.smashingmagazine.com/feed/',
-  'sdr': 'https://superdevresources.com/feed/'
+  'sdr': 'https://superdevresources.com/feed/',
+  'template-flip' : 'https://templateflip.com/feed/',
 }
 
 var blogCache = {}

@@ -5,6 +5,7 @@ const designLinks = {
   ],
   blogs: [
     {to: 'smashing-magazine', title: 'Smashing Magazine'},
+    {to: 'graphic-flip', title: 'GraphicFlip'},
     {to: 'sdr', title: 'Super Dev Resources'},
   ]
 }
@@ -15,7 +16,10 @@ const developmentLinks = {
     {to: 'medium', iconClass: 'icon icon-medium', iconID: '#icon-medium', title: 'Medium'},
     {to: 'hacker-news', iconClass: 'icon icon-hacker-news', iconID: '#icon-hacker-news', title: 'Hacker News'}
   ],
-  blogs: []
+  blogs: [
+    {to: 'smashing-magazine', title: 'Smashing Magazine'},
+    {to: 'sdr', title: 'Super Dev Resources'},
+    {to: 'template-flip', title: 'TemplateFlip'},]
 }
 
 const marketingLinks = {
