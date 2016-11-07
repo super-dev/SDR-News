@@ -1,0 +1,11 @@
+@include desktop {
+  .grid-sidebar-left > .one-half:first-child {
+    width: 20%;
+    border-right: 1px solid #f2f2f2;
+    margin-top: 32px;
+  }
+
+  .grid-sidebar-left > .one-half:last-child {
+    width: 75%;
+  }
+}

@@ -10,8 +10,13 @@ export default new Router({
   mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
-    { path: '/reddit', component: RedditView },
-    { path: '/hacker-news', component: HackerNewsView },
-    { path: '*', redirect: '/reddit' }
+    { path: '/design/reddit', component: RedditView },
+    { path: '/development/reddit', component: RedditView },
+    { path: '/marketing/reddit', component: RedditView },
+    { path: '/development/hacker-news', component: HackerNewsView },
+    { path: '/design', redirect: '/design/reddit' },
+    { path: '/development', redirect: '/development/reddit' },
+    { path: '/marketing', redirect: '/marketing/reddit' },
+    { path: '*', redirect: '/design/reddit' }
   ]
 })

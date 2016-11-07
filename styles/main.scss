@@ -4,6 +4,19 @@
   max-width: 868px;
 }
 
+ul.news-scoure-menu {
+  margin: 0 2em 0 0;
+  text-align: right;
+
+  li a {
+    opacity: 0.6;
+  }
+
+  li a.active {
+    opacity: 1;
+  }
+}
+
 .thumbnail {
     margin-top: 3px;
     padding: 0;
