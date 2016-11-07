@@ -5,8 +5,13 @@ const designLinks = {
   ],
   blogs: [
     {to: 'smashing-magazine', title: 'Smashing Magazine'},
-    {to: 'graphic-flip', title: 'GraphicFlip'},
-    {to: 'sdr', title: 'Super Dev Resources'},
+    {to: 'webdesignerdepot', title: 'Webdesigner Depot'},
+    {to: 'designmodo', title: 'Designmodo'},
+    {to: 'graphicdesignjunction', title: 'Graphic Design Junction'},
+    {to: 'designshack', title: 'Design Shack'},
+    {to: 'speckyboy', title: 'Speckyboy Design Magazine'},
+    {to: 'awwwards', title:'Awwwards'},
+    {to: 'graphic-flip', title: 'GraphicFlip'}
   ]
 }
 
@@ -17,7 +22,6 @@ const developmentLinks = {
     {to: 'medium', iconClass: 'icon icon-medium', iconID: '#icon-medium', title: 'Medium'}
   ],
   blogs: [
-    {to: 'smashing-magazine', title: 'Smashing Magazine'},
     {to: 'sdr', title: 'Super Dev Resources'},
     {to: 'template-flip', title: 'TemplateFlip'},]
 }

@@ -15,10 +15,10 @@
               <a class="category" :href="category.url" target="_blank">{{ category.title }}</a>
             </span>
             <span class="dot" v-if="item.categories">•</span> 
-            <span v-if="item.author">
-              by {{ item.author }}
+            <span v-if="item.creator">
+              by {{ item.creator }}
             </span>
-            <span class="dot" v-if="item.author">•</span>
+            <span class="dot" v-if="item.creator">•</span>
             <a :href="item.comments_url" title="View comments"
                 target="_blank" v-if="item.comments_url">{{ item.num_comments }} comments</a>
             <span class="dot" v-if="item.comments_url">•</span>

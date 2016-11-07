@@ -17,7 +17,6 @@ ul.news-scoure-menu {
 
   li {
     margin: 0;
-    height: 28px;
     line-height: 28px;
   }
 
@@ -26,8 +25,7 @@ ul.news-scoure-menu {
     width: 100%;
     opacity: 0.6;
     padding: 3px 20px 3px 0;
-    height: 28px;
-    line-height: 28px;
+    line-height: 24px;
 
     svg {
       margin-right: 4px;
@@ -41,6 +39,7 @@ ul.news-scoure-menu {
 
   li a.router-link-active {
     font-size: 110%;
+    font-weight: 500;
   }
 }
 

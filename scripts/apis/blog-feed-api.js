@@ -5,6 +5,12 @@ const BlogMap = {
   'smashing-magazine': 'https://www.smashingmagazine.com/feed/',
   'sdr': 'https://superdevresources.com/feed/',
   'template-flip' : 'https://templateflip.com/feed/',
+  'awwwards': 'http://www.awwwards.com/blog/feed/',
+  'webdesignerdepot': 'http://feeds2.feedburner.com/webdesignerdepot',
+  'graphicdesignjunction': 'http://feeds.feedburner.com/GraphicDesignJunction',
+  'speckyboy': 'https://speckyboy.com/feed/',
+  'designmodo': 'http://feeds.feedburner.com/designmodo',
+  'designshack': 'http://feedpress.me/designshack'
 }
 
 var blogCache = {}
@@ -40,7 +46,6 @@ export function fetchBlogPosts(id, cb) {
           // console.log(JSON.stringify(post, null, 4))
           post.url = post.link
           post.time = Math.floor((new Date(post.pubDate)).getTime() / 1000)
-          post.author = post.creator
           posts.push(post)
         }
       })
