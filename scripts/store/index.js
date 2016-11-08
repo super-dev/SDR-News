@@ -1,5 +1,4 @@
 import {fetchRedditPosts} from './reddit-api'
-import {fetchHackerNewsPosts} from './hacker-news-api'
 
 var redditPosts = {};
 var hackerNewsPosts = [];
@@ -11,14 +10,6 @@ class Store {
     }
 
     return redditPosts[category];
-  }
-
-  getHackerNewsPosts() {
-    if(hackerNewsPosts.length == 0) {
-      hackerNewsPosts = fetchHackerNewsPosts();
-    }
-
-    return hackerNewsPosts;
   }
 }
 

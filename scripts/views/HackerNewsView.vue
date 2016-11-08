@@ -4,7 +4,7 @@
 
 <script>
 import NewsList from './../components/NewsList.vue'
-import store from './../store'
+import {fetchHackerNewsPosts} from './../apis/hacker-news-api'
 
 export default {
   name: 'hacker-news-view',
@@ -16,8 +16,17 @@ export default {
           posts: []
       }
   },
-  beforeMount() {
-    this.posts = store.getHackerNewsPosts();
+  created() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData () {
+      this.posts = []
+      fetchHackerNewsPosts(this.loadPosts)
+    },
+    loadPosts (result) {
+      this.posts = result
+    }
   }
 }
 </script>
