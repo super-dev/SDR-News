@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import axios from 'axios'
 
 const subreddits = {
       'design': [
@@ -51,35 +51,48 @@ const subreddits = {
       ]
 };
 
-export function fetchRedditPosts(category) {
-  var posts = [];
+var redditCache = {}
+
+export function fetchRedditPosts(category, cb) {
   var url_dict = [];
 
-  for (var index = 0; index < subreddits[category].length; index++) {
-    Vue.http.get("https://www.reddit.com/r/"+ subreddits[category][index] +"/new.json?limit=20")
-    .then(function(resp){
-        for (var i = 0; i < resp.data.data.children.length; i++) {
-          var post = resp.data.data.children[i].data;
+  if(!redditCache[category]) {
+    redditCache[category] = [];
+    for (var index = 0; index < subreddits[category].length; index++) {
+      var subreddit = subreddits[category][index]      
+      axios.get("https://www.reddit.com/r/"+ subreddit +"/new.json?limit=20")
+        .then(function(resp){
+          for (var i = 0; i < resp.data.data.children.length; i++) {
+            var post = resp.data.data.children[i].data;
 
 
-          if(url_dict[post.url] != 1 && shouldAdd(post)) {
-            post.time = post.created_utc;
-            post.categories = [{ title: post.subreddit, url: 'https://www.reddit.com/r/' + post.subreddit}];
-            post.comments_url = 'https://www.reddit.com/' + post.permalink;
-            /*var thumbnail = post.thumbnail;
-            if(!thumbnail || thumbnail=='self' || thumbnail =='nsfw' || thumbnail == 'default' ) {
-          		post.thumbnail = "";
-              post.default_icon = "icon-reddit-alien";
-          	}*/ //disabled all thumbnails until we find a better way to display them
-            posts.push(post);
-            //remember that we added this url, to remove duplicates
-            url_dict[post.url] = 1;
+            if(url_dict[post.url] != 1 && shouldAdd(post)) {
+              post.time = post.created_utc;
+              post.categories = [{ title: post.subreddit, url: 'https://www.reddit.com/r/' + post.subreddit}];
+              post.comments_url = 'https://www.reddit.com/' + post.permalink;
+              /*var thumbnail = post.thumbnail;
+              if(!thumbnail || thumbnail=='self' || thumbnail =='nsfw' || thumbnail == 'default' ) {
+                post.thumbnail = "";
+                post.default_icon = "icon-reddit-alien";
+              }*/ //disabled all thumbnails until we find a better way to display them
+              
+              // console.log(post)
+              redditCache[category].push(post);
+              //remember that we added this url, to remove duplicates
+              url_dict[post.url] = 1;
+            }
           }
-        }
-    });
-  }
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+      }
+      cb(redditCache[category])
+    }
 
-  return posts;
+  else {
+    cb(redditCache[category])
+  }
 }
 
 function shouldAdd(post) {

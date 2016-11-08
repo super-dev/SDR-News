@@ -4,7 +4,7 @@
 
 <script>
 import NewsList from './../components/NewsList.vue'
-import store from './../store'
+import {fetchRedditPosts} from './../apis/reddit-api'
 
 export default {
   name: 'reddit-view',
@@ -26,7 +26,10 @@ export default {
   methods: {
     fetchData () {
       this.posts = []
-      this.posts = store.getRedditPosts(this.$route.params.category)
+      fetchRedditPosts(this.$route.params.category, this.loadPosts)
+    },
+    loadPosts (result) {
+      this.posts = result
     }
   }
 }

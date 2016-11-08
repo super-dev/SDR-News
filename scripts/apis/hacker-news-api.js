@@ -31,7 +31,9 @@ export function fetchHackerNewsPosts(cb) {
       });
     });
     hackerNewsPosts = posts;
+    cb(hackerNewsPosts);
   }
-  
-  cb(hackerNewsPosts);
+  else {
+    cb(hackerNewsPosts);
+  }  
 }

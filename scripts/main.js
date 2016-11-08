@@ -9,8 +9,6 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
-Vue.use(require('vue-resource'));
-
 //google analytics for page views
 if(typeof ga !== 'undefined') {
   router.beforeEach(function (to, from, next) {
