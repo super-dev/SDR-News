@@ -33,7 +33,6 @@ const BlogMap = {
   'quick-sprout': 'http://feeds2.feedburner.com/quicksprout',
   'sez': 'http://feeds.feedburner.com/SearchEngineJournal',
   'socialmediaexaminer': 'http://www.socialmediaexaminer.com/feed/',
-  'google-webmaster': 'http://feeds.feedburner.com/blogspot/amDG',
   'hubspot': 'http://blog.hubspot.com/marketing/rss.xml',
   'neil': 'http://neilpatel.com/feed/',
 }

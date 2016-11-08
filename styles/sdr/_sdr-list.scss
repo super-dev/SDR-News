@@ -19,7 +19,7 @@ ul.sdr-list {
 }
 
 @include mobile {
-  .sdr-list .entry-title {
-    font-size: 19px;
+  ul.sdr-list .entry-title {
+    font-size: 18px;
   }
 }

@@ -50,7 +50,6 @@ const marketingLinks = {
     {to: 'medium', iconClass: 'icon icon-medium', iconID: '#icon-medium', title: 'Medium'}
   ],
   blogs: [
-    {to: 'google-webmaster', title: 'Google Webmaster Blog'},
     {to: 'hubspot', title: 'HubSpot Marketing Blog'},
     {to: 'sez', title: 'Search Engine Journal'},
     {to: 'socialmediaexaminer', title: 'Social Media Examiner'},
