@@ -1,5 +1,13 @@
 @import "sdr/sdr";
 
+#source-toggle + label{
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 999;
+  background-color: #fff;
+}
+
 ul.news-scoure-menu {
   font-size: 90%;
 
