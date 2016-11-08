@@ -18,6 +18,12 @@ if(typeof ga !== 'undefined') {
   });
 }
 
+// after each route change, close sources menu if it is open
+router.afterEach((to, from) => {
+  var sourceMenu = document.getElementById('source-toggle')
+  if(sourceMenu) sourceMenu.checked = false
+})
+
 /* eslint-disable no-new */
 const app = new Vue({
   router,
