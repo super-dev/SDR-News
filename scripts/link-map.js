@@ -6,10 +6,16 @@ const designLinks = {
   blogs: [
     {to: 'smashing-magazine', title: 'Smashing Magazine'},
     {to: 'webdesignerdepot', title: 'Webdesigner Depot'},
+    {to: 'alistapart', title: 'A List Apart'},
     {to: 'designmodo', title: 'Designmodo'},
+    {to: 'spoongraphics', title: 'Spoon Graphics'},
+    {to: 'tutsplus-design', title: 'Tuts+ Design'},
     {to: 'graphicdesignjunction', title: 'Graphic Design Junction'},
+    {to: 'onextrapixel', title: 'Onextrapixel'},
     {to: 'designshack', title: 'Design Shack'},
-    {to: 'speckyboy', title: 'Speckyboy Design Magazine'},
+    {to: 'creativebloq', title: 'Creative Bloq'},
+    {to: 'line25', title: 'Line25'},
+    {to: 'google-design', title: 'Google Design'},
     {to: 'awwwards', title:'Awwwards'},
     {to: 'graphic-flip', title: 'GraphicFlip'}
   ]

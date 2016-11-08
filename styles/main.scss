@@ -70,6 +70,10 @@ ul.news-scoure-menu {
       margin: 0 0.5em;
       color: #ccc;
     }
+
+    .dot + span {
+      margin-left: 0;
+    }
 }
 
 .entry-meta .category {

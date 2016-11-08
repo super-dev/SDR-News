@@ -8,9 +8,15 @@ const BlogMap = {
   'awwwards': 'http://www.awwwards.com/blog/feed/',
   'webdesignerdepot': 'http://feeds2.feedburner.com/webdesignerdepot',
   'graphicdesignjunction': 'http://feeds.feedburner.com/GraphicDesignJunction',
-  'speckyboy': 'https://speckyboy.com/feed/',
   'designmodo': 'http://feeds.feedburner.com/designmodo',
-  'designshack': 'http://feedpress.me/designshack'
+  'designshack': 'http://feedpress.me/designshack',
+  'creativebloq': 'http://www.creativebloq.com/feed',
+  'alistapart': 'http://alistapart.com/main/feed',
+  'spoongraphics': 'http://feeds2.feedburner.com/SpoonGraphics',
+  'tutsplus-design': 'https://design.tutsplus.com/posts.rss',
+  'onextrapixel': 'http://feeds2.feedburner.com/onextrapixel',
+  'google-design': 'https://design.google.com/services/newsfeed/feed.rss',
+  'line25': 'http://feeds2.feedburner.com/Line25'
 }
 
 var blogCache = {}
@@ -45,6 +51,7 @@ export function fetchBlogPosts(id, cb) {
         if(shouldAdd(post)) {
           // console.log(JSON.stringify(post, null, 4))
           post.url = post.link
+          post.pubDate = post.pubDate? post.pubDate : post.date
           post.time = Math.floor((new Date(post.pubDate)).getTime() / 1000)
           posts.push(post)
         }
@@ -58,7 +65,7 @@ export function fetchBlogPosts(id, cb) {
 }
 
 function shouldAdd(post) {
-  return isAsciiOnly(post.title) && post.title.indexOf("http://") < 0 && post.title.indexOf("https://") < 0
+  return isAsciiOnly(post.title) && post.title.indexOf("http://") < 0 && post.title.indexOf("https://") < 0 && post.title.indexOf("sponsor") < 0
 }
 
 function isAsciiOnly(str) {
