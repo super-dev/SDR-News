@@ -28,9 +28,20 @@ const BlogMap = {
   'david-walsh': 'https://davidwalsh.name/feed',
   'programmable-web': 'http://feeds.feedburner.com/ProgrammableWeb',
   'toptal': 'https://www.toptal.com/developers/blog.rss',
-  'risingstack': 'https://blog.risingstack.com/rss/'
+  'risingstack': 'https://blog.risingstack.com/rss/',
+  'moz': 'http://feedpress.me/mozblog',
+  'quick-sprout': 'http://feeds2.feedburner.com/quicksprout',
+  'sez': 'http://feeds.feedburner.com/SearchEngineJournal',
+  'socialmediaexaminer': 'http://www.socialmediaexaminer.com/feed/',
+  'google-webmaster': 'http://feeds.feedburner.com/blogspot/amDG',
+  'hubspot': 'http://blog.hubspot.com/marketing/rss.xml',
+  'neil': 'http://neilpatel.com/feed/',
 }
 
+const IsAtom = {
+  'moz': true,
+  'google-webmaster': true,
+} 
 var blogCache = {}
 
 export function fetchBlogPosts(id, cb) {
@@ -44,11 +55,14 @@ export function fetchBlogPosts(id, cb) {
     console.log("No blog configured with id: " + id)
     return
   }
-  
+
   var query = 'select * from rss where url="'
+  if(IsAtom[id]) {
+    query = 'select * from feednormalizer where output="rss_2.0" AND url="'
+  }
 
   query += BlogMap[id]
-  query += '"'
+  query += '" LIMIT 20'
 
   // console.log(query)
 
@@ -61,7 +75,10 @@ export function fetchBlogPosts(id, cb) {
     .then(function (response) {
       var posts = []
 
-      response.data.query.results.item.forEach( function(post) {
+      // console.log(JSON.stringify(response, null, 4))
+      var items = IsAtom[id] ? response.data.query.results.rss.channel.item : response.data.query.results.item
+
+      items.forEach( function(post) {
         if(shouldAdd(post)) {
           // console.log(JSON.stringify(post, null, 4))
           post.url = post.link
