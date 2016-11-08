@@ -1,5 +1,5 @@
 <template>
-  <div class="container-readable">
+  <div class="container-readable section">
     <p v-if="!orderedPosts || orderedPosts < 1">Loading...</p>
     <ul class="sdr-list">
         <li v-for="obj in orderedPosts">

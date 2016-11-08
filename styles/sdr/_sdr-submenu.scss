@@ -1,5 +1,6 @@
 .sdr-submenu {
   text-align: center;
+  margin-top: $size-element-spacing;
   
   .button {
     margin-right: 0.7em;
@@ -8,7 +9,17 @@
     line-height: 2.2;
 
     .icon {
-      margin-right: 6px;
+      margin-right: 3px;
+    }
+
+    &:hover, &:focus {
+      color: inherit;
+      border: 1px solid #eee;
+    }
+    
+    &:active, &.router-link-active {
+      background-color: #fafafa;
+      border: 1px solid #eee;
     }
   }
 }

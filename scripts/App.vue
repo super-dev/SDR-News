@@ -1,15 +1,15 @@
 <template>
   <div class="container-content">
-    <div class="sdr-submenu container-readable section">
-      <router-link to="/design" class="button button-ghost">
+    <div class="sdr-submenu">
+      <router-link to="/design" class="button button-text">
         <svg class="icon icon-brush"><use xlink:href="#icon-brush"></use></svg>
         Design
       </router-link>
-      <router-link to="/development" class="button button-ghost">
+      <router-link to="/development" class="button button-text">
         <svg class="icon icon-code"><use xlink:href="#icon-code"></use></svg>
         Development
       </router-link>
-      <router-link to="/marketing" class="button button-ghost">
+      <router-link to="/marketing" class="button button-text">
         <svg class="icon icon-bullhorn"><use xlink:href="#icon-bullhorn"></use></svg>
         Marketing
       </router-link>
