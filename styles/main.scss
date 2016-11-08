@@ -1,9 +1,5 @@
 @import "sdr/sdr";
 
-.container-readable {
-  max-width: 868px;
-}
-
 ul.news-scoure-menu {
   font-size: 90%;
 
@@ -82,3 +78,10 @@ ul.news-scoure-menu {
 .fade-enter, .fade-leave-active {
   opacity: 0;
 } 
+
+
+@include mobile {
+  .grid-sidebar-left .container-readable {
+    padding: 0;
+  }
+}

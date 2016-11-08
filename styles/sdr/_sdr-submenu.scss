@@ -23,3 +23,14 @@
     }
   }
 }
+
+@include mobile {
+  .sdr-submenu {
+    margin: 0;
+
+    .button {
+      margin-right: 0;
+      padding: 0 0.5em;
+    }
+  }
+}
