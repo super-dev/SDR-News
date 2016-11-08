@@ -28,6 +28,18 @@ const developmentLinks = {
     {to: 'medium', iconClass: 'icon icon-medium', iconID: '#icon-medium', title: 'Medium'}
   ],
   blogs: [
+    {to: 'tutsplus-code', title: 'Tuts+ Code'},
+    {to: 'sitepoint', title: 'SitePoint'},
+    {to: 'tutorialzine', title: 'Tutorialzine'},
+    {to: 'scotch', title: 'Scotch'},
+    {to: 'codyhouse', title: 'CodyHouse'},
+    {to: 'toptal', title: 'Toptal Engineering Blog'},
+    {to: 'risingstack', title: 'RisingStack Engineering'},
+    {to: 'programmable-web', title: 'ProgrammableWeb'},
+    {to: 'webappers', title: 'WebAppers'},
+    {to: 'wordpress-tavern', title: 'WordPress Tavern'},
+    {to: 'david-walsh', title: 'David Walsh Blog'},
+    {to: 'polyglot-dev', title: 'The Polyglot Developer'},
     {to: 'sdr', title: 'Super Dev Resources'},
     {to: 'template-flip', title: 'TemplateFlip'},]
 }

@@ -16,7 +16,19 @@ const BlogMap = {
   'tutsplus-design': 'https://design.tutsplus.com/posts.rss',
   'onextrapixel': 'http://feeds2.feedburner.com/onextrapixel',
   'google-design': 'https://design.google.com/services/newsfeed/feed.rss',
-  'line25': 'http://feeds2.feedburner.com/Line25'
+  'line25': 'http://feeds2.feedburner.com/Line25',
+  'tutsplus-code': 'https://code.tutsplus.com/posts.rss',
+  'scotch': 'https://scotch.io/feed',
+  'sitepoint': 'http://feeds.feedburner.com/SitepointFeed',
+  'webappers': 'http://feeds.feedburner.com/Webappers',
+  'codyhouse': 'http://feeds.feedburner.com/codyhouse/feeds',
+  'tutorialzine': 'http://feeds.feedburner.com/Tutorialzine',
+  'wordpress-tavern': 'http://feeds2.feedburner.com/WordpressTavern',
+  'polyglot-dev': 'https://www.thepolyglotdeveloper.com/feed/',
+  'david-walsh': 'https://davidwalsh.name/feed',
+  'programmable-web': 'http://feeds.feedburner.com/ProgrammableWeb',
+  'toptal': 'https://www.toptal.com/developers/blog.rss',
+  'risingstack': 'https://blog.risingstack.com/rss/'
 }
 
 var blogCache = {}
@@ -38,6 +50,8 @@ export function fetchBlogPosts(id, cb) {
   query += BlogMap[id]
   query += '"'
 
+  // console.log(query)
+
   axios.get('https://query.yahooapis.com/v1/public/yql', {
       params: {
         q: query,
@@ -53,6 +67,13 @@ export function fetchBlogPosts(id, cb) {
           post.url = post.link
           post.pubDate = post.pubDate? post.pubDate : post.date
           post.time = Math.floor((new Date(post.pubDate)).getTime() / 1000)
+          if(post.creator) {
+            // string html tags
+            var div = document.createElement("div")
+            div.innerHTML = post.creator
+            post.creator =  div.textContent || div.innerText || ""
+            post.creator = post.creator.split(',')[0] // remove anything extra after the name
+          }
           posts.push(post)
         }
       })
