@@ -22,7 +22,11 @@ mixin menuitem(item)
     li(class='menu-header') #{item.title}
 
 
-mixin social(list)
+mixin horizontal-menu(list)
   each item in list
-    a.button.button-text(href=item.url, target="_blank", title=item.title)
-      | <svg class="icon icon-#{item.icon}"><use xlink:href="#icon-#{item.icon}"></use></svg>
+    if item.icon
+      a.button.button-text(href=item.url, target="_blank", title=item.title)
+        | <svg class="icon icon-#{item.icon}"><use xlink:href="#icon-#{item.icon}"></use></svg>
+    else
+      a.button.button-text(href=item.url, target="_blank")
+        | #{item.title}
