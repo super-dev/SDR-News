@@ -7,6 +7,8 @@ serve:
 ## additional data for site available as site.{key} in pug templates
 site:
   url: "https://news.superdevresources.com/"
+  title: SDR News
+  icon: sdr-logo
   github: "https://github.com/super-dev"
   twitter: "https://twitter.com/superdevres42"
   analytics: "UA-37350394-3"

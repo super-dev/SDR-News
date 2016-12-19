@@ -1,58 +1,40 @@
-include ./../_includes/_mixins.pug
-doctype html
-block vars
-html(lang='en-US')
-  head
-    meta(charset='UTF-8')
-    meta(http-equiv='x-ua-compatible', content='ie=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    title #{title} - SDR News
-    meta(name='description', content=description)
-    meta(property='og:title', content=title)
-    meta(property='og:type', content='website')
-    meta(property='og:url', content=page.url)
-    meta(property='og:image', content=site.url + 'img/featured.png')
-    link(rel='canonical', href=page.url)
-    link(href='/styles/main.css', rel='stylesheet')
-    style
-      include ./../_includes/_icons.css
-    block styles
-    link(rel='icon', href=site.url + 'img/sdr-logo-32x32.png', sizes='32x32')
-    link(rel='icon', href=site.url + 'img/sdr-logo-192x192.png', sizes='192x192')
-    link(rel='apple-touch-icon-precomposed', href=site.url + 'img/sdr-logo-180x180.png')
-    meta(name='msapplication-TileImage', content=site.url + 'img/sdr-logo-270x270.png')
-  body#top
-    include ./../_includes/_icons.svg
-    header.header
-        .container
-            .header-left
-              a(href='https://superdevresources.com/').site-branding
-                img(src="/img/sdr-logo.png")
-                h1.title.screen-reader-text SDR News
-            .menu-toggle
-              input(type="checkbox")#menu-toggle
-              label(for="menu-toggle").header-right
-                span.css-icon-hamburger
-                  span Toggle
-                span Menu
-              .menu-toggle-content
-                +menu(data.menu.main, 'menu')
-                .header-right
-                  +menu(data.menu.secondary, 'menu')
-    block content
-    footer.footer
-      .container-readable.section.text-center
-        a(href='https://superdevresources.com/')
-          img.footer-logo(src="/img/sdr-logo.png")
-        div Super Dev Resources is a popular destination for finding
-          br
-          | awesome free resources for independent developers and startups. <a class="text-small" href="https://superdevresources.com/about/">Learn More</a>
-        div
-          +horizontal-menu(data.menu.social)
-        div.section
-          +horizontal-menu(data.menu.footer)
-        p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
-          br
-          | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a>.
-  include ./../_includes/_analytics.pug
+extends ./_layout-root.pug
+block header
+  header.header
+    .container
+      .header-left
+        a(href='https://superdevresources.com/').site-branding
+          img(src="/img/sdr-logo.png")
+          h1.title.screen-reader-text SDR News
+      .menu-toggle
+        input(type="checkbox")#menu-toggle
+        label(for="menu-toggle").header-right
+          span.css-icon-hamburger
+            span Toggle
+          span Menu
+        .menu-toggle-content
+          +menu(data.menu.main, 'menu')
+          .header-right
+            +menu(data.menu.secondary, 'menu')
+            
+block content
+  != page.content
+
+block footer   
+  footer.footer
+    .container-readable.section.text-center
+      a(href='https://superdevresources.com/')
+        img.footer-logo(src="/img/sdr-logo.png")
+      div Super Dev Resources is a popular destination for finding
+        br
+        | awesome free resources for independent developers and startups. <a class="text-small" href="https://superdevresources.com/about/">Learn More</a>
+      div
+        +horizontal-menu(data.menu.social)
+      div.section
+        +horizontal-menu(data.menu.footer)
+      p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
+        br
+        | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a>.
+
+block scripts
   script(src='/scripts/main.js')

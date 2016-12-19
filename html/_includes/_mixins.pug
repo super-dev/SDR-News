@@ -1,3 +1,24 @@
+mixin titlemeta(title, sitename)
+  if title === sitename
+    title #{title}
+  else
+    title #{title} - #{sitename}
+  if page.description
+    meta(name='description', content=page.description)
+
+mixin opengraph(page)
+  meta(property='og:title', content=page.title)
+  meta(property="og:site_name", content=site.title)
+  meta(property='og:type', content='website')
+  meta(property="og:locale", content='en_us')
+  meta(property='og:url', content=page.url)
+
+mixin favicons(favicon)
+  link(rel='icon', href=site.url + '/img/' + favicon + '-32x32.png', sizes='32x32')
+  link(rel='icon', href=site.url + '/img/' + favicon + '-192x192.png', sizes='192x192')
+  link(rel='apple-touch-icon-precomposed', href=site.url + '/img/' + favicon + '-180x180.png')
+  meta(name='msapplication-TileImage', content=site.url + '/img/' + favicon + '-270x270.png')
+
 mixin menu(list, classes)
   nav(role="navigation")
     ul(class=classes)
@@ -21,12 +42,37 @@ mixin menuitem(item)
   else
     li(class='menu-header') #{item.title}
 
-
 mixin horizontal-menu(list)
   each item in list
     if item.icon
       a.button.button-text(href=item.url, target="_blank", title=item.title)
         | <svg class="icon icon-#{item.icon}"><use xlink:href="#icon-#{item.icon}"></use></svg>
     else
-      a.button.button-text(href=item.url, target="_blank")
+      a.button.button-text(href=item.url)
         | #{item.title}
+
+mixin social(list)
+  each item in list
+    a.button.button-text(href=item.url, target="_blank")
+      | <svg class="icon icon-#{item.icon}"><use xlink:href="#icon-#{item.icon}"></use></svg>
+      span #{item.title}
+
+
+mixin prevmenu(list, classes)
+  - var prev = ''
+  each item in list
+    if(item.url === page.path)
+      if(prev.url)
+        span(class=classes) &larr; <a href="#{prev.url}">#{prev.title}</a>
+    else
+      - prev = item
+
+mixin nextmenu(list, classes)
+  - var found = false
+  each item in list
+    if(found === true)
+      if(item.url)
+        span(class=classes) <a href="#{item.url}">#{item.title}</a> &rarr;
+      - found = false
+    else if(item.url == page.path)
+      - found = true

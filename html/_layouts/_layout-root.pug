@@ -1,0 +1,24 @@
+include ./../_includes/_mixins.pug
+doctype html
+block vars
+html(lang='en-US')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    +titlemeta(page.title, site.title)
+    +opengraph(page)
+    link(rel='canonical', href=page.url)
+    link(href='/styles/main.css', rel='stylesheet')
+    style
+      include ./../_includes/icons/_icons.css
+    block styles
+    if(site.icon)
+      +favicons(site.icon)
+  body#top
+    include ./../_includes/icons/_icons.svg
+    block header
+    block content
+    block footer
+  block scripts
+  include ./../_includes/_analytics.pug
