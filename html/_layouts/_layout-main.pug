@@ -16,6 +16,8 @@ block header
           +menu(data.menu.main, 'menu')
           .header-right
             +menu(data.menu.secondary, 'menu')
+            .expandable-search
+              include ./../_includes/search-form.html
             
 block content
   != page.content
