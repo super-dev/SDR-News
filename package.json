@@ -1,7 +1,7 @@
 {
   "name": "sdr-news",
-  "version": "0.1.0",
-  "description": "Web Develepment News (news.superdevresources.com)",
+  "version": "1.0.0",
+  "description": "Web Design and Develepment News (news.superdevresources.com)",
   "author": "Kanishk Kunal",
   "license": "MIT",
   "dependencies": {
