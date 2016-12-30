@@ -15,12 +15,22 @@
     line-height: 2.1;
   }
 
+  .button-primary {
+    color: #fff;
+    opacity: 1;
+  }
+
   h1 {
     margin-top: 0;
     line-height: $size-site-header-height;
     font-weight: normal;
     display: inline-block;
+    color: #fff;
   }
+}
+
+nav .current-menu-item > a {
+  color: #fff;
 }
 
 @include mobile {
