@@ -19,6 +19,8 @@ View News Site
  - [MMCSS](https://mmcss.kunruchcreations.com/) - CSS Framework used for design
  - [mmpilot](https://mmpilot.kunruchcreations.com/) - Build tool
  - [Font Awesome](http://fontawesome.io/) and [IcoMoon](https://icomoon.io/) for SVG icons used on site.
+ - [Netlify](https://www.netlify.com/) - Hosting Provider.
+ - [stdlib](https://stdlib.com/) - Function as a Service
 
 ## License
 
