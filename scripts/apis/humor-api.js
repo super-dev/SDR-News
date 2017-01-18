@@ -1,38 +1,24 @@
 import axios from 'axios'
 
-const subreddits = {
-      'development': [
-        'angular2',
-        'browsers',
-        'coding',
-        'css',
-        'frontend',
-        'html5',
-        'javascript',
-        'jquery',
-        'node',
-        'opensource',
-        'php',
-        'ProWordPress',
-        'reactjs',
-        'Sass',
-        'vuejs',
-        'Web_Development',
-        'web_programming',
-        'webdev',
-        'websecurity',
-        'Wordpress']
-};
+const subreddits = [
+        'ProgrammerHumor',
+        'programmerreactions',
+        'softwaregore',
+        'Sysadminhumor',
+        'techhumor',
+        'recruitinghell',
+        'iiiiiiitttttttttttt',
+        ];
 
 
 var redditCache = []
 
-export function fetchRedditPosts(cb) {
+export function fetchHumorPosts(cb) {
   var url_dict = [];
 
   if(redditCache.length == 0) {
-    for (var index = 0; index < subreddits['development'].length; index++) {
-      var subreddit = subreddits['development'][index]      
+    for (var index = 0; index < subreddits.length; index++) {
+      var subreddit = subreddits[index]      
       axios.get("https://www.reddit.com/r/"+ subreddit +"/new.json?limit=20")
         .then(function(resp){
           for (var i = 0; i < resp.data.data.children.length; i++) {
@@ -43,11 +29,19 @@ export function fetchRedditPosts(cb) {
               post.time = post.created_utc;
               post.categories = [{ title: post.subreddit, url: 'https://www.reddit.com/r/' + post.subreddit}];
               post.comments_url = 'https://www.reddit.com/' + post.permalink;
-              /*var thumbnail = post.thumbnail;
+              var thumbnail = post.thumbnail;
               if(!thumbnail || thumbnail=='self' || thumbnail =='nsfw' || thumbnail == 'default' ) {
                 post.thumbnail = "";
                 post.default_icon = "icon-reddit-alien";
-              }*/ //disabled all thumbnails until we find a better way to display them
+              }
+              else {
+                if(post.url.endsWith(".png") || post.url.endsWith(".jpg") || post.url.endsWith(".jpeg") || post.url.endsWith(".gif")) {
+                  post.previewImage = post.url
+                }
+                else if(post.preview.images[0].source.url) {
+                  post.previewImage = post.preview.images[0].source.url
+                }
+              }
               
               // console.log(post)
               redditCache.push(post);

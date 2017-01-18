@@ -44,6 +44,15 @@ ul.news-scoure-menu {
     padding: 0;
 }
 
+.preview-image {
+    margin: 1rem 0 0 -28px;
+    padding: 0;
+}
+
+.preview-image + .entry-meta {
+  margin-left: -28px;
+}
+
 .media-left .thumbnail-small + .media-body {
   margin-left: 4px;
 }

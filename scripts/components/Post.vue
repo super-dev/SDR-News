@@ -10,6 +10,12 @@
             </a>
             <span class="title-domain" v-if="item.domain">({{item.domain}})</span>
         </h2>
+        <p v-if=item.selftext>
+          {{ item.selftext }}
+        </p>
+        <div class="preview-image" v-if="item.previewImage">
+          <img :src="item.previewImage"></img>
+        </div>
         <div class="entry-meta">
             <span v-for="category in item.categories">
               <a class="category" :href="category.url" target="_blank">{{ category.title }}</a>
