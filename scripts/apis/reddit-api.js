@@ -1,21 +1,6 @@
 import axios from 'axios'
 
 const subreddits = {
-      'design': [
-        'Design',
-        'designinspire',
-        'designthought',
-        'designtools',
-        'graphic_design',
-        'idesignedthis',
-        'learndesign',
-        'learnwebdesign',
-        'logodesign',
-        'typography',
-        'UI_Design',
-        'UnsolicitedRedesigns',
-        'userexperience',
-        'web_design'],
       'development': [
         'angular2',
         'browsers',
@@ -37,29 +22,18 @@ const subreddits = {
         'web_programming',
         'webdev',
         'websecurity',
-        'Wordpress'],
-      'marketing': [
-        'AppBusiness',
-        'bigseo',
-        'content_marketing',
-        'marketing',
-        'Mobile_Marketing',
-        'SEO',
-        'socialmedia',
-        'startups',
-        'webmarketing'
-      ]
+        'Wordpress']
 };
 
-var redditCache = {}
 
-export function fetchRedditPosts(category, cb) {
+var redditCache = []
+
+export function fetchRedditPosts(cb) {
   var url_dict = [];
 
-  if(!redditCache[category]) {
-    redditCache[category] = [];
-    for (var index = 0; index < subreddits[category].length; index++) {
-      var subreddit = subreddits[category][index]      
+  if(redditCache.length == 0) {
+    for (var index = 0; index < subreddits['development'].length; index++) {
+      var subreddit = subreddits['development'][index]      
       axios.get("https://www.reddit.com/r/"+ subreddit +"/new.json?limit=20")
         .then(function(resp){
           for (var i = 0; i < resp.data.data.children.length; i++) {
@@ -77,7 +51,7 @@ export function fetchRedditPosts(category, cb) {
               }*/ //disabled all thumbnails until we find a better way to display them
               
               // console.log(post)
-              redditCache[category].push(post);
+              redditCache.push(post);
               //remember that we added this url, to remove duplicates
               url_dict[post.url] = 1;
             }
@@ -87,11 +61,11 @@ export function fetchRedditPosts(category, cb) {
           console.log(error);
         })
       }
-      cb(redditCache[category])
+      cb(redditCache)
     }
 
   else {
-    cb(redditCache[category])
+    cb(redditCache)
   }
 }
 

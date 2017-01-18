@@ -2,15 +2,6 @@ import axios from 'axios'
 import url from 'url'
 
 const Tags = {
-  'design': [
-    'design',
-    'responsive-design',
-    'ui-design',
-    'user-experience',
-    'ux',
-    'ux-design',
-    'web-design'
-  ],
   'development': [
     'css',
     'html5',
@@ -19,31 +10,23 @@ const Tags = {
     'nodejs',
     'front-end-development',
     'vuejs',
-    'web-development'],
-  'marketing': [
-    'blogging',
-    'marketing',
-    'seo',
-    'social-media',
-    'startup',
-
-  ]
+    'web-development']
 }
 
-var mediumCache = {}
+var mediumCache = []
 
-export function fetchMediumPosts(category, cb) {
+export function fetchMediumPosts(cb) {
 
-  if(mediumCache[category]) {
-    cb(mediumCache[category])
+  if(mediumCache.length > 0) {
+    cb(mediumCache)
     return
   }
   
   var query = 'select * from rss where url in ('
 
-  for(var i = 0; i < Tags[category].length; i++) {
-    query += ('"https://medium.com/feed/tag/' + Tags[category][i] + '"')
-    if(i != Tags[category].length - 1) {
+  for(var i = 0; i < Tags['development'].length; i++) {
+    query += ('"https://medium.com/feed/tag/' + Tags['development'][i] + '"')
+    if(i != Tags['development'].length - 1) {
       query += ', '
     }
   }
@@ -72,7 +55,7 @@ export function fetchMediumPosts(category, cb) {
           }
           post.category.forEach(function (tag) {
             // console.log(tag)
-            if(categories.length < 3 && shouldIncludeTag(Tags[category], tag)) {
+            if(categories.length < 3 && shouldIncludeTag(Tags['development'], tag)) {
               categories.push( { title: tag, url: "https://medium.com/tag/"+tag+"/latest"})
             }
           })
@@ -81,7 +64,7 @@ export function fetchMediumPosts(category, cb) {
           url_dict[post.guid.content] = true
         }
       })
-      mediumCache[category] = posts
+      mediumCache = posts
       cb(posts)
     })
     .catch(function (error) {

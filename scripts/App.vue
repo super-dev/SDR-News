@@ -1,19 +1,5 @@
 <template>
-  <div class="container-content">
-    <div class="sdr-submenu">
-      <router-link to="/design" class="button button-text">
-        <svg class="icon icon-brush"><use xlink:href="#icon-brush"></use></svg>
-        Design
-      </router-link>
-      <router-link to="/development" class="button button-text">
-        <svg class="icon icon-code"><use xlink:href="#icon-code"></use></svg>
-        Development
-      </router-link>
-      <router-link to="/marketing" class="button button-text">
-        <svg class="icon icon-bullhorn"><use xlink:href="#icon-bullhorn"></use></svg>
-        Marketing
-      </router-link>
-    </div>
+  <div class="container-content section">
     <div class="grid grid-sidebar-left">
       
       <div class="one-half">
@@ -58,10 +44,18 @@
 
 <script>
 import LinksMap from './link-map'
+import {fetchBlogPosts} from './apis/blog-feed-api'
+
 export default {
     computed: {
       links: function() {
-        return LinksMap[this.$route.params.category]
+        return LinksMap
+      }
+    },
+    created () {
+      //Preload blogs feed
+      for(var i = 0; i < LinksMap.blogs.length; i++) {
+        fetchBlogPosts(LinksMap.blogs[i].to, function() {})
       }
     }
 }
