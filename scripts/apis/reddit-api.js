@@ -20,6 +20,7 @@ const subreddits = {
         'Web_Development',
         'web_programming',
         'webdev',
+        'WebdevTutorials',
         'websecurity',
         'Wordpress']
 };
