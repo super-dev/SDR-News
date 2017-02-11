@@ -17,14 +17,13 @@
   h1 {
     margin-top: 0;
     line-height: $size-site-header-height;
-    font-weight: normal;
     display: inline-block;
     color: #fff;
   }
-}
 
-nav .current-menu-item > a {
-  color: #fff;
+  .icon {
+    font-size: 100%;
+  }
 }
 
 @include mobile {
