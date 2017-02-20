@@ -8,7 +8,6 @@ const developmentLinks = {
   blogs: [    
     {to: 'smashing-magazine', title: 'Smashing Magazine'},
     {to: 'webdesignerdepot', title: 'Webdesigner Depot'},
-    {to: 'tutsplus-code', title: 'Tuts+ Code'},
     {to: 'sitepoint', title: 'SitePoint'},
     {to: 'tutorialzine', title: 'Tutorialzine'},
     {to: 'scotch', title: 'Scotch'},

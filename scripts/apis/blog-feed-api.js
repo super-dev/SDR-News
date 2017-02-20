@@ -56,7 +56,7 @@ export function fetchBlogPosts(id, cb) {
     return
   }
 
-  axios.get('https://kanishkkunal.stdlib.com/rss2json', {
+  axios.get('https://api.superdevresources.com/rss2json', {
       params: {
         url: BlogMap[id]
       }
