@@ -2,6 +2,7 @@ const developmentLinks = {
   communities: [
     {to: 'reddit', iconClass: 'icon icon-reddit-alien', iconID: '#icon-reddit-alien', title: 'reddit'},
     {to: 'hacker-news', iconClass: 'icon icon-hacker-news', iconID: '#icon-hacker-news', title: 'Hacker News'},
+    {to: 'refind', iconClass: 'icon icon-refind', iconID: '#icon-refind', title: 'Refind'},
     // {to: 'medium', iconClass: 'icon icon-medium', iconID: '#icon-medium', title: 'Medium'}
     {to: 'humor', iconClass: 'icon icon-smile-o', iconID: '#icon-smile-o', title: 'Humor'},
   ],
