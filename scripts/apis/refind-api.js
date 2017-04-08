@@ -28,9 +28,9 @@ export function fetchRefindPosts(cb) {
           }
         })
         .then(function(response){
-          console.log(JSON.stringify(response, null, 4))
+          // console.log(JSON.stringify(response, null, 4))
           var items = response.data.items
-          console.log(items)
+          // console.log(items)
 
           var category = response.data.title
           var category_url = response.data.link
