@@ -38,6 +38,7 @@
           <router-view class="view" :key="$route.fullPath"></router-view>
         </transition>
       </div>
+    </div>
   </div>
 </template>
 
