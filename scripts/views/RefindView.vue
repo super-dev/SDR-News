@@ -4,10 +4,10 @@
 
 <script>
 import NewsList from './../components/NewsList.vue'
-import {fetchHackerNewsPosts} from './../apis/hacker-news-api'
+import {fetchRefindPosts} from './../apis/refind-api'
 
 export default {
-  name: 'hacker-news-view',
+  name: 'refind-view',
   components: {
     NewsList
   },
@@ -22,7 +22,7 @@ export default {
   methods: {
     fetchData () {
       this.posts = []
-      fetchHackerNewsPosts(this.loadPosts)
+      fetchRefindPosts(this.loadPosts)
     },
     loadPosts (result) {
       this.posts = result
