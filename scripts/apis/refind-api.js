@@ -32,7 +32,7 @@ export function fetchRefindPosts(cb) {
           var items = response.data.items
           // console.log(items)
 
-          var category = response.data.title
+          var category = response.data.title.split('–')[0]
           var category_url = response.data.link
           items.forEach( function(post) {
             if(shouldAdd(post)) {
@@ -47,6 +47,7 @@ export function fetchRefindPosts(cb) {
                 post.creator = post.creator.split(',')[0] // remove anything extra after the name
               }
               post.categories = [{ title: category, url: category_url}];
+              post.domain = url.parse(post.url).hostname;
               posts.push(post)
             }
           })
