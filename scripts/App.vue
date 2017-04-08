@@ -4,7 +4,7 @@
       
       <div class="one-half">
         <div class="menu-toggle">
-          <input type="checkbox" id=source-toggle>
+          <input type="checkbox" id="source-toggle">
           <label class="alignright" for="source-toggle">
             <span class="css-icon-hamburger">
               <span>Toggle</span>
