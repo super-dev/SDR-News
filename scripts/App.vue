@@ -1,8 +1,8 @@
 <template>
-  <div class="container-content section">
-    <div class="grid grid-sidebar-left">
+  <div>
+    <div class="grid grid-sidebar-both">
       
-      <div class="one-half">
+      <div class="one-third sidebar sidebar-left">
         <div class="menu-toggle">
           <input type="checkbox" id="source-toggle">
           <label class="alignright" for="source-toggle">
@@ -11,7 +11,7 @@
             </span>
             <span>Sources</span>
           </label>
-          <div class="menu-toggle-content">
+          <div class="menu-toggle-content sidebar-content">
             <nav>
               <ul class="news-scoure-menu">
                 <li class="menu-header">Communities</li>
@@ -33,10 +33,20 @@
         </div>
       </div>
 
-      <div class="one-half">
-        <transition name="fade" mode="out-in">
-          <router-view class="view" :key="$route.fullPath"></router-view>
-        </transition>
+      <div class="one-third main-content">
+        <div class="container-readable">
+          <p class="entry-meta text-center">
+            News &raquo; {{ title }}
+          </p>
+          <transition name="fade" mode="out-in">
+            <router-view class="view" :key="$route.fullPath"></router-view>
+          </transition>
+        </div>
+      </div>
+      <div class="one-third sidebar sidebar-right">
+        <div class="sidebar-content">
+          <div style="background:rgba(0,0,0,0.1);width:300px;height:250px;"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -51,6 +61,19 @@ export default {
     computed: {
       links: function() {
         return LinksMap
+      },
+      title: function() {
+        if( this.$route.name != "Blog" ) {
+          return this.$route.name
+        }
+        else {
+          for(var i = 0; i < LinksMap.blogs.length; i++) {
+           if(LinksMap.blogs[i].to === this.$route.params.blogID) {
+             return LinksMap.blogs[i].title
+           }
+          }
+          return "Blog"
+        }
       }
     },
     created () {

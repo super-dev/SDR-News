@@ -1,11 +1,35 @@
 @include desktop {
-  .grid-sidebar-left > .one-half:first-child {
-    width: 20%;
-    border-right: 1px solid #f2f2f2;
-    margin-top: 32px;
+  .grid-sidebar-both > .sidebar-left {
+    width: 22%;
+    margin-right: 0;
+    background: $color-background-light;
+    border-right: 1px solid $color-default-border;
+
+    .sidebar-content {
+      max-width: 210px;
+      float: right;
+    }
   }
 
-  .grid-sidebar-left > .one-half:last-child {
-    width: 75%;
+  .grid-sidebar-both > .main-content {    
+    width: 56%;
+    margin-right: 0;
   }
+
+  .grid-sidebar-both > .sidebar-right {
+    width: 22%;
+    background: $color-background-light;
+    border-left: 1px solid $color-default-border;
+  }
+
+  .sidebar-content {
+    width: 100%;
+    max-width: 300px;
+    margin: 2.5em 1.2em;
+    min-height: 100vh;
+  }
+}
+
+.footer {
+    margin-top: 0;
 }

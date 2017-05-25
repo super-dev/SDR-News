@@ -10,6 +10,7 @@
 
 ul.news-scoure-menu {
   font-size: 90%;
+  margin-top: 0;
 
   li {
     margin: 0;
@@ -19,7 +20,7 @@ ul.news-scoure-menu {
   li a {
     display: block;
     width: 100%;
-    opacity: 0.6;
+    opacity: 0.75;
     padding: 3px 20px 3px 0;
     line-height: 24px;
 
@@ -55,6 +56,10 @@ ul.news-scoure-menu {
 
 .media-left .thumbnail-small + .media-body {
   margin-left: 4px;
+}
+
+.news-content {
+  max-width: 900px;
 }
 
 .entry-title a:visited {

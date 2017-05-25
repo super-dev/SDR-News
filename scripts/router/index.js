@@ -13,11 +13,11 @@ export default new Router({
   mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
-    { path: '/reddit', component: RedditView },
-    { path: '/hacker-news', component: HackerNewsView },
-    { path: '/refind', component: RefindView },
-    { path: '/humor', component: HumorView },
-    { path: '/:blogID', component: BlogFeedView },
+    { path: '/reddit', component: RedditView, name: 'reddit' },
+    { path: '/hacker-news', component: HackerNewsView, name: 'Hacker News' },
+    { path: '/refind', component: RefindView, name: 'Refind' },
+    { path: '/humor', component: HumorView, name: 'Humor' },
+    { path: '/:blogID', component: BlogFeedView, name: 'Blog' },
     { path: '*', redirect: '/reddit' }
   ]
 })
