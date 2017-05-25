@@ -45,7 +45,11 @@
       </div>
       <div class="one-third sidebar sidebar-right">
         <div class="sidebar-content">
-          <div style="background:rgba(0,0,0,0.1);width:300px;height:250px;"></div>
+          <div style="background:rgba(0,0,0,0.01);width:300px;height:250px;margin-bottom:2em;border:1px solid #eee;">
+            <a href="https://creativemarket.com/free-goods?u=monikaratan" target="_blank">
+              <img src="/img/partners/creative-market-free-goods.jpg" width="300" height="250">
+            </a>
+          </div>
         </div>
       </div>
     </div>
