@@ -1,6 +1,6 @@
 @include desktop {
   .grid-sidebar-both > .sidebar-left {
-    width: 22%;
+    width: 20%;
     margin-right: 0;
     background: $color-background-light;
     border-right: 1px solid $color-default-border;
@@ -12,12 +12,13 @@
   }
 
   .grid-sidebar-both > .main-content {    
-    width: 56%;
-    margin-right: 0;
+    width: 54%;
+    margin-right: 0;    
+    padding: 0 10px;
   }
 
   .grid-sidebar-both > .sidebar-right {
-    width: 22%;
+    width: 26%;
     background: $color-background-light;
     border-left: 1px solid $color-default-border;
   }
