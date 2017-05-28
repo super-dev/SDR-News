@@ -81,9 +81,42 @@ export default {
       }
     },
     created () {
+      // Add keyboard event listener 
+      window.addEventListener('keyup', this.keyup)
+
       //Preload blogs feed
       for(var i = 0; i < LinksMap.blogs.length; i++) {
         fetchBlogPosts(LinksMap.blogs[i].to, function() {})
+      }
+    },
+    methods: {
+      keyup: function(e) {
+        var linkList = this.$route.name == "Blog" ? LinksMap.blogs : LinksMap.communities
+        var total = linkList.length
+        var current = -1
+
+        for(var i = 0; i < total; i++) {
+          if('/' + linkList[i].to === this.$route.path) {
+            current = i;
+          }
+        }
+
+        console.log(e)
+
+        if(e.keyCode === 37) {
+          current = current == 0 ? total - 1 : current - 1
+          this.$router.push(linkList[current].to)
+        }
+        else if(e.keyCode === 39) {
+          current = current == total - 1 ? 0 : current + 1
+          this.$router.push(linkList[current].to)
+        }
+        else if(e.key === 'b') {
+          this.$router.push(LinksMap.blogs[0].to)
+        }
+        else if(e.key === 'c') {
+          this.$router.push(LinksMap.communities[0].to)
+        }
       }
     }
 }
