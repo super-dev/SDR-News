@@ -50,6 +50,15 @@
               <img src="/img/partners/creative-market-free-goods.jpg" width="300" height="250">
             </a>
           </div>
+          <h3 class="h6 text-muted">Keyboard Shortcuts</h3>
+          <p class="text-muted text-small">
+            <ul class="bare">
+              <li><kbd>&rarr;</kbd> Next news source</li>
+              <li><kbd>&larr;</kbd> Previous news source</li>
+              <li><kbd>b</kbd> Jump to blogs</li>
+              <li><kbd>c</kbd> Jump to communities</li>
+            </ul>
+          </p>
         </div>
       </div>
     </div>
