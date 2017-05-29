@@ -1,8 +1,16 @@
 <template>
-  <div>
-    <div class="grid grid-sidebar-both">
-      
-      <div class="one-third sidebar sidebar-left">
+  <div class="container-wide">
+    <div class="wrapper">      
+      <div class="content">
+        <div class="container-readable">
+          <p class="entry-meta text-center">
+          </p>
+          <transition name="fade" mode="out-in">
+            <router-view class="view" :key="$route.fullPath"></router-view>
+          </transition>
+        </div>
+      </div>
+      <div class="sidebar sidebar-left">
         <div class="menu-toggle">
           <input type="checkbox" id="source-toggle">
           <label class="alignright" for="source-toggle">
@@ -32,18 +40,7 @@
           </div>
         </div>
       </div>
-
-      <div class="one-third main-content">
-        <div class="container-readable">
-          <p class="entry-meta text-center">
-            News &raquo; {{ title }}
-          </p>
-          <transition name="fade" mode="out-in">
-            <router-view class="view" :key="$route.fullPath"></router-view>
-          </transition>
-        </div>
-      </div>
-      <div class="one-third sidebar sidebar-right">
+      <div class="sidebar sidebar-right">
         <div class="sidebar-content">
           <div style="background:rgba(0,0,0,0.01);width:300px;height:250px;margin-bottom:2em;border:1px solid #eee;">
             <a href="https://creativemarket.com/free-goods?u=monikaratan" target="_blank">
