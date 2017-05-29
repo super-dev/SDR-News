@@ -43,6 +43,13 @@ body {
     margin-top: 0;
 }
 
+
+@media only screen and (max-width: 1180px) {
+  .sidebar-right {
+    display: none;
+  }
+}
+
 @include mobile {
   body {
     background-color: #fff;
