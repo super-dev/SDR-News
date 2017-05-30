@@ -24,19 +24,26 @@ block content
 
 block footer   
   footer.footer
-    .container-readable.section.text-center
-      a(href='https://superdevresources.com/')
-        img.footer-logo(src="/img/sdr-logo.png")
-      div <a href="https://superdevresources.com/">Super Dev Resources</a> is a popular destination for finding
-        br
-        | awesome free resources for independent developers and startups. <a class="text-small" href="https://superdevresources.com/about/">Learn More</a>
-      div.section
-        +horizontal-menu(data.menu.social)
-      div.section
-        +horizontal-menu(data.menu.footer)
-      p.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
-        br
-        | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a> and <a href="https://mmcss.kunruchcreations.com/" target="_blank">mmcss</a>.
+    .footer-main.container-content 
+      div.grid        
+        div.one-fourth
+          a(href='https://superdevresources.com/')
+            img.footer-logo(src="/img/sdr-logo.png")
+          div <a href="https://superdevresources.com/">Super Dev Resources</a> is your destination for finding
+            | awesome free web design and development resources.
+            |  <a class="text-small" href="https://superdevresources.com/about/">Learn More</a>
+        
+        div.one-fourth
+          +menu(data.menu.main)
+        div.one-fourth
+          +menu(data.menu.footer)
+        div.one-fourth
+          +menu(data.menu.social)
+    div.footer-credit.section.text-center
+      div.container-content
+        div.text-small Copyright © <a href="http://kunruchcreations.com/">KunRuch Creations</a>, All rights reserved.
+          br
+          | Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a> and <a href="https://mmcss.kunruchcreations.com/" target="_blank">mmcss</a>.
 
 block scripts
   script(src='/scripts/main.js')

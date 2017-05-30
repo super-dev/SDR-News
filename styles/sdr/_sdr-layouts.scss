@@ -43,6 +43,13 @@ body {
     margin-top: 0;
 }
 
+.footer-main {
+  margin: 3rem auto 2.5rem;
+}
+
+.footer-credit {
+  border-top: 1px dashed #ddd;
+}
 
 @media only screen and (max-width: 1180px) {
   .sidebar-right {
