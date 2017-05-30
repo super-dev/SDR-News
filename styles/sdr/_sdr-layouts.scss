@@ -43,6 +43,16 @@ body {
     margin-top: 0;
 }
 
+@include desktop {
+  .footer .one-fourth:first-child {
+    width: 37%;
+  }
+
+  .footer .one-fourth {
+    width: 16%;
+  }
+}
+
 .footer-main {
   margin: 3rem auto 2.5rem;
 }
