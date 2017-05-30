@@ -27,14 +27,27 @@
 }
 
 @include desktop {
+
+  .header .menu {
+    text-align: left;
+    margin-left: 80px;
+  }
+
   .header .menu-item {
-    text-transform: uppercase;
-    font-size: 82%;
+    font-size: 90%;
     letter-spacing: 1px;
-    font-weight: 600;
+    font-weight: 400;
 
     svg {
       font-size: 122%;
+    }
+
+    &.current-menu-item {
+      font-weight: 600;
+
+      > a {
+        color: inherit;
+      }
     }
   }
 }
