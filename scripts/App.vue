@@ -3,7 +3,7 @@
     <div class="wrapper">      
       <div class="content">
         <div class="container-readable">
-          <p class="entry-meta text-center">
+          <p class="entry-meta news-section-title">
             {{ title }}
           </p>
           <transition name="fade" mode="out-in">
