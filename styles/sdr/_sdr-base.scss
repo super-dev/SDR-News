@@ -70,6 +70,9 @@
 .footer-logo {
   height: 48px;
   width: auto;
+  margin-top: -12px;
+  margin-left: -12px;
+  margin-bottom: 10px;
 }
 
 .footer h3 {
@@ -85,10 +88,6 @@
   .footer h3 {
     margin-top: 0;
   }
-}
-
-.footer a {
-    color: #5d5d5d!important;
 }
 
 .footer a:hover {
