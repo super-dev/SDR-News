@@ -24,6 +24,10 @@
   color: #888;
 }
 
+.footer-credit {
+  border-top: 1px dashed #ddd;
+}
+
 @include desktop { 
   .footer h3 {
     margin-top: 0;
@@ -33,6 +37,7 @@
 .footer a:hover {
     text-decoration: underline;
 }
+
 
 
 @include desktop {
