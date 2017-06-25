@@ -40,7 +40,8 @@ body {
 }
 
 .footer {
-    margin-top: 0;
+  background: #fefefe;
+  margin-top: 0;
 }
 
 @include desktop {
@@ -58,7 +59,6 @@ body {
 }
 
 .footer-credit {
-  border-top: 1px dashed #ddd;
 }
 
 @media only screen and (max-width: 1180px) {
