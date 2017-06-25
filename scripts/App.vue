@@ -13,12 +13,12 @@
       </div>
       <div class="sidebar sidebar-left">
         <div class="menu-toggle">
-          <input type="checkbox" id="source-toggle">
-          <label class="alignright" for="source-toggle">
+          <input type="checkbox" id="menu-toggle">
+          <label class="alignright" for="menu-toggle">
             <span class="css-icon-hamburger">
               <span>Toggle</span>
             </span>
-            <span>Sources</span>
+            <span>Menu</span>
           </label>
           <div class="menu-toggle-content sidebar-content">
             <nav>

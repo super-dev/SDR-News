@@ -35,30 +35,9 @@ body {
   
   .sidebar-content {
     width: 100%;
-    margin: 2em 1.2em;
+    margin: 2em 0;
+    padding-left: 20px;
   }
-}
-
-.footer {
-  background: #fefefe;
-  margin-top: 0;
-}
-
-@include desktop {
-  .footer .one-fourth:first-child {
-    width: 37%;
-  }
-
-  .footer .one-fourth {
-    width: 16%;
-  }
-}
-
-.footer-main {
-  margin: 3rem auto 2.5rem;
-}
-
-.footer-credit {
 }
 
 @media only screen and (max-width: 1180px) {

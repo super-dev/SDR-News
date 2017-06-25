@@ -1,13 +1,5 @@
 @import "sdr/sdr";
 
-#source-toggle + label{
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 999;
-  background-color: #fff;
-}
-
 ul.news-scoure-menu {
   font-size: 90%;
   margin-top: 0;
@@ -59,7 +51,6 @@ ul.news-scoure-menu {
 }
 
 .news-section-title {
-  letter-spacing: 1px;
   margin: 2rem auto 8px;
 }
 

@@ -1,0 +1,46 @@
+.footer {
+  background: #fefefe;
+  margin-top: 0;
+}
+
+.footer-main {
+  margin: 3rem auto 2.5rem;
+}
+
+.footer-logo {
+  height: 48px;
+  width: auto;
+  margin-top: -12px;
+  margin-left: -12px;
+  margin-bottom: 10px;
+}
+
+.footer h3 {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 80%;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  color: #888;
+}
+
+@include desktop { 
+  .footer h3 {
+    margin-top: 0;
+  }
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+@include desktop {
+  .footer .one-fourth:first-child {
+    width: 37%;
+  }
+
+  .footer .one-fourth {
+    width: 16%;
+  }
+}
