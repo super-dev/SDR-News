@@ -6,6 +6,14 @@ body {
   background: #fff;
 }
 
+.container {
+  max-width: 1960px;
+}
+
+.container-content {
+  max-width: 1240px;
+}
+
 @include desktop {
   .wrapper {
     display: flex;

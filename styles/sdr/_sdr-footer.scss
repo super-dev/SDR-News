@@ -49,3 +49,23 @@
     width: 16%;
   }
 }
+
+@include mobile {
+  .footer-main {
+    margin-top: 2rem;
+  }
+
+  .footer h3 {
+    margin-top: 2.5rem;
+  }
+
+  .footer ul li {
+    line-height: 1;
+    padding-bottom: 0.3rem;
+  }
+  
+  .footer-credit {
+    margin-top: 2rem;
+    padding-bottom: 5rem;
+  }
+}
