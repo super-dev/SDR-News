@@ -17,7 +17,7 @@ const BlogMap = {
   'onextrapixel': 'http://feeds2.feedburner.com/onextrapixel',
   'google-design': 'https://design.google.com/services/newsfeed/feed.rss',
   'line25': 'http://feeds2.feedburner.com/Line25',
-  'tutsplus-code': 'https://code.tutsplus.com/posts.rss',
+  'tutsplus-code': 'https://tutorials.tutsplus.com/posts.atom',
   'scotch': 'https://scotch.io/feed',
   'sitepoint': 'http://feeds.feedburner.com/SitepointFeed',
   'webappers': 'http://feeds.feedburner.com/Webappers',
@@ -35,6 +35,12 @@ const BlogMap = {
   'socialmediaexaminer': 'http://www.socialmediaexaminer.com/feed/',
   'hubspot': 'http://blog.hubspot.com/marketing/rss.xml',
   'neil': 'http://neilpatel.com/feed/',
+  'codrops': 'http://feeds2.feedburner.com/tympanus',
+  'speckyboy': 'https://speckyboy.com/feed/',
+  'css-tricks': 'https://css-tricks.com/feed/',
+  'designshack': 'https://designshack.net/feed',  
+  'cssauthor': 'https://cssauthor.com/feed',
+  'webdesignledger': 'https://webdesignledger.com//feed'
 }
 
 const IsAtom = {
