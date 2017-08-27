@@ -5,9 +5,7 @@
     </a>
     <div class="media-body">
         <h2 class="entry-title">
-            <a :href="url" :title="title" target="_blank">
-                {{ item.title  | unescape | truncate }}
-            </a>
+            <a :href="url" :title="title" target="_blank">{{ item.title  | unescape | truncate }}</a>
             <span class="title-domain" v-if="item.domain">({{item.domain}})</span>
         </h2>
         <div class="preview-image" v-if="item.previewImage">
