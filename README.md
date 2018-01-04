@@ -4,13 +4,7 @@
 
 Latest news for Web Developers aggregated from multiple sources such as sub-reddits and HackerNews.
 
-<p align="center">
-<a href="https://news.superdevresources.com/" title="News for Web Developers">
-<img src="http://news.superdevresources.com/img/featured.png" alt="SDR News"></img>
-<br>
-View News Site
-</a>
-</p>
+<a href="https://www.buymeacoffee.com/kanishk"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png"  target="_blank"></a>
 
 
 ## Credits
