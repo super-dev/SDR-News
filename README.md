@@ -1,11 +1,10 @@
 [![Build Status](https://travis-ci.org/super-dev/SDR-News.svg?branch=master)](https://travis-ci.org/super-dev/SDR-News)
 
+Update - This has now moved to a stnadalone site https://dailydevbytes.com/ with bit more features. You can still access find the core logic in this code which aggregates news from multiple sources such as blogs, sub-reddits and HackerNews. 
+
 # [SDR News](https://news.superdevresources.com)
 
-Latest news for Web Developers aggregated from multiple sources such as sub-reddits and HackerNews.
-
-<a href="https://www.buymeacoffee.com/kanishk"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png"  target="_blank"></a>
-
+Latest news for Web Developers.
 
 ## Credits
 
