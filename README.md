@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/super-dev/SDR-News.svg?branch=master)](https://travis-ci.org/super-dev/SDR-News)
 
-Update - This has now moved to a stnadalone site https://dailydevbytes.com/ with bit more features. You can still access find the core logic in this code which aggregates news from multiple sources such as blogs, sub-reddits and HackerNews. 
+Update - This has now moved to a standalone site https://dailydevbytes.com/ with bit more features. You can still access find the core logic in this code which aggregates news from multiple sources such as blogs, sub-reddits and HackerNews. 
 
 # [SDR News](https://news.superdevresources.com)
 
