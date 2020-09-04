@@ -19,7 +19,7 @@
     "babel-runtime": "^6.23.0",
     "babelify": "^7.3.0",
     "mmpilot": "^0.6.3",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.13.1",
     "npm-run-all": "^4.0.2",
     "pug": "^2.0.0-rc.1",
     "uglifyify": "^3.0.4",
