@@ -21,7 +21,7 @@
     "mmpilot": "^0.6.3",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.2",
-    "pug": "^2.0.0-rc.1",
+    "pug": "^3.0.1",
     "uglifyify": "^3.0.4",
     "vueify": "^9.4.1"
   },
