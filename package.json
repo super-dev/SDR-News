@@ -7,7 +7,7 @@
   "dependencies": {
     "axios": "^0.16.1",
     "firebase": "^4.0.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "mmcss": "^0.3.3",
     "vue": "^2.3.3",
     "vue-router": "^2.5.3"
